@@ -1,0 +1,373 @@
+const FALLBACK_GALLERY = [
+  {
+    id: "clean-lp-hero-01",
+    title: "Clean LP Hero",
+    image: "images/sample/clean-lp-hero-01.svg",
+    tags: ["LP", "clean", "cosmetic", "premium"],
+    preset: {
+      composition: "centered product composition with generous whitespace for copy placement",
+      lighting: "soft natural morning light, low contrast, gentle shadows",
+      colorPalette: "white, pale blue, soft gray",
+      mood: "clean, premium, trustworthy, calm",
+      texture: "smooth ceramic surface, subtle glossy reflection",
+      style: "Japanese skincare LP hero advertising visual",
+      negative: "busy background, harsh shadows, clutter, text, logo, watermark"
+    },
+    presetJa: {
+      composition: "コピーを配置しやすい余白を広く取った、商品中央配置の構図",
+      lighting: "柔らかい朝の自然光、低コントラスト、やさしい影",
+      colorPalette: "白、淡いブルー、ソフトグレー",
+      mood: "清潔感、高級感、信頼感、落ち着き",
+      texture: "なめらかなセラミック面、控えめな光沢反射",
+      style: "日本向けスキンケアLPのヒーロー広告ビジュアル",
+      negative: "散らかった背景、強い影、過度な装飾、文字、ロゴ、透かし"
+    },
+    recommendedSettings: {
+      aspectRatio: "16:9",
+      referenceUse: "Use this image as a style reference if the generation tool supports reference images.",
+      variationAdvice: "Keep the same seed and change only the subject for consistent series generation."
+    }
+  },
+  {
+    id: "pastel-translucent-flare-01",
+    title: "パステル透明感フレア",
+    image: "images/sample/pastel-translucent-flare-01.jpg",
+    tags: ["cosmetic", "pastel", "transparent", "flare", "premium"],
+    preset: {
+      composition: "soft close-up product composition with layered translucent objects and gentle diagonal movement",
+      lighting: "bright diffused light with pastel lens flares, pearlescent highlights, soft glow, low contrast",
+      colorPalette: "milky white, pale lavender, powder blue, soft pink, iridescent pastel tones",
+      mood: "transparent, airy, delicate, dreamy, premium, clean",
+      texture: "frosted glass, translucent liquid, pearlescent shimmer, soft prism reflection, glossy wet highlights",
+      style: "delicate beauty advertising visual with pastel flare lighting and clear translucent atmosphere",
+      negative: "heavy shadows, dark background, strong contrast, muddy colors, hard edges, clutter, text, logo, watermark"
+    },
+    presetJa: {
+      composition: "透明感のあるオブジェクトを重ねた、やわらかな接写構図と穏やかな斜めの動き",
+      lighting: "明るく拡散した光、パステル調のフレア、真珠のようなハイライト、柔らかな発光感、低コントラスト",
+      colorPalette: "ミルキーホワイト、淡いラベンダー、パウダーブルー、ソフトピンク、虹色を含むパステルトーン",
+      mood: "透明感、軽やか、繊細、夢のよう、高級感、清潔感",
+      texture: "すりガラス、透明感のある液体、パールのきらめき、プリズム反射、みずみずしい光沢",
+      style: "パステルのフレア光と透明感を活かした、繊細なビューティー広告ビジュアル",
+      negative: "重い影、暗い背景、強すぎるコントラスト、濁った色、硬い輪郭、散らかり、文字、ロゴ、透かし"
+    },
+    recommendedSettings: {
+      aspectRatio: "4:5",
+      referenceUse: "Use this image as a color, flare, and translucency reference if the generation tool supports reference images.",
+      variationAdvice: "Keep pastel flare lighting and translucent texture fixed while changing the subject for a consistent beauty-style series."
+    }
+  },
+  {
+    id: "saas-ad-01",
+    title: "Trust SaaS Ad",
+    image: "images/sample/saas-ad-01.svg",
+    tags: ["BtoB", "SaaS", "trust", "web"],
+    preset: {
+      composition: "clean dashboard-inspired composition with clear focal area and organized spacing",
+      lighting: "even studio lighting, soft highlights, no dramatic shadows",
+      colorPalette: "deep green, white, slate gray, restrained accent color",
+      mood: "reliable, modern, practical, professional",
+      texture: "smooth digital surfaces, subtle glass reflection, crisp edges",
+      style: "Japanese BtoB SaaS advertising visual for web and LP sections",
+      negative: "chaotic UI, unreadable text, fake logo, overly futuristic neon, clutter"
+    },
+    presetJa: {
+      composition: "焦点が明確で余白が整理された、ダッシュボードを想起させるクリーンな構図",
+      lighting: "均一なスタジオライティング、柔らかいハイライト、強い影なし",
+      colorPalette: "深いグリーン、白、スレートグレー、控えめなアクセントカラー",
+      mood: "信頼感、現代的、実用的、プロフェッショナル",
+      texture: "なめらかなデジタル面、控えめなガラス反射、シャープなエッジ",
+      style: "日本向けBtoB SaaSのWeb・LP広告ビジュアル",
+      negative: "混沌としたUI、読めない文字、架空ロゴ、過度に未来的なネオン、散らかり"
+    },
+    recommendedSettings: {
+      aspectRatio: "16:9",
+      referenceUse: "Use this image as a layout and mood reference if supported.",
+      variationAdvice: "Keep the layout and palette stable when generating a campaign series."
+    }
+  },
+  {
+    id: "natural-wellness-01",
+    title: "Natural Wellness",
+    image: "images/sample/natural-wellness-01.svg",
+    tags: ["wellness", "natural", "organic", "article"],
+    preset: {
+      composition: "soft lifestyle composition with natural props and moderate whitespace",
+      lighting: "warm diffused daylight, gentle highlights, natural shadows",
+      colorPalette: "warm white, sage green, light wood, muted beige accents",
+      mood: "healthy, approachable, natural, relaxed",
+      texture: "paper, linen, wood, matte packaging, organic surface details",
+      style: "Japanese wellness article LP visual with natural editorial feeling",
+      negative: "medical fear appeal, heavy contrast, artificial neon color, messy table, text"
+    },
+    presetJa: {
+      composition: "自然な小物と適度な余白を使った、柔らかいライフスタイル構図",
+      lighting: "暖かく拡散した日中の自然光、やさしいハイライト、自然な影",
+      colorPalette: "暖かい白、セージグリーン、明るい木目、控えめなベージュ",
+      mood: "健康的、親しみやすい、自然体、リラックス",
+      texture: "紙、リネン、木、マットなパッケージ、有機的な表面感",
+      style: "自然なエディトリアル感のある日本向けウェルネス記事LPビジュアル",
+      negative: "医療的な恐怖訴求、強すぎるコントラスト、人工的なネオン色、散らかったテーブル、文字"
+    },
+    recommendedSettings: {
+      aspectRatio: "4:5",
+      referenceUse: "Use this image as a tone and color reference if supported.",
+      variationAdvice: "Use the same palette for article thumbnails and supporting LP images."
+    }
+  }
+];
+
+const state = {
+  gallery: FALLBACK_GALLERY,
+  selectedPresetId: FALLBACK_GALLERY[0].id,
+  activeTag: "all"
+};
+
+const els = {
+  form: document.querySelector("#promptForm"),
+  galleryGrid: document.querySelector("#galleryGrid"),
+  tagFilter: document.querySelector("#tagFilter"),
+  galleryStatus: document.querySelector("#galleryStatus"),
+  selectedPresetLabel: document.querySelector("#selectedPresetLabel"),
+  toast: document.querySelector("#toast"),
+  clearButton: document.querySelector("#clearButton"),
+  englishOutput: document.querySelector("#englishOutput"),
+  japaneseOutput: document.querySelector("#japaneseOutput"),
+  negativeOutput: document.querySelector("#negativeOutput"),
+  settingsOutput: document.querySelector("#settingsOutput")
+};
+
+const fieldIds = [
+  "usage",
+  "subject",
+  "scene",
+  "composition",
+  "tone",
+  "colors",
+  "mustInclude",
+  "avoid",
+  "ratio",
+  "notes"
+];
+
+function getFieldValues() {
+  return Object.fromEntries(
+    fieldIds.map((id) => [id, document.querySelector(`#${id}`).value.trim()])
+  );
+}
+
+function compactList(items) {
+  return items.filter(Boolean).join(", ");
+}
+
+function sentence(value, fallback) {
+  return value || fallback;
+}
+
+function getSelectedPreset() {
+  return state.gallery.find((item) => item.id === state.selectedPresetId) || state.gallery[0];
+}
+
+function buildPrompts() {
+  const values = getFieldValues();
+  const preset = getSelectedPreset();
+  const p = preset.preset;
+  const pJa = preset.presetJa || preset.preset;
+
+  const subjectEn = sentence(values.subject, "the main subject");
+  const sceneEn = sentence(values.scene, "a production-ready visual scene");
+  const compositionEn = compactList([values.composition, p.composition]);
+  const colorsEn = compactList([values.colors, p.colorPalette]);
+  const moodEn = compactList([values.tone, p.mood]);
+  const mustIncludeEn = sentence(values.mustInclude, "clear subject visibility and enough whitespace for design use");
+  const usageNoteEn = sentence(values.notes, "ready to use in LP, advertising, web, or video asset production");
+
+  const english = [
+    `Purpose: Create a ${values.usage}.`,
+    `Subject: ${subjectEn}.`,
+    `Scene: ${sceneEn}.`,
+    `Composition: ${compositionEn}.`,
+    `Lighting: ${p.lighting}.`,
+    `Color palette: ${colorsEn}.`,
+    `Mood and tone: ${moodEn}.`,
+    `Style direction: ${p.style}.`,
+    `Texture and material feeling: ${p.texture}.`,
+    `Must include: ${mustIncludeEn}.`,
+    `Usage notes: ${usageNoteEn}.`,
+    "Generate a polished, commercially usable visual with a clear focal point and controlled negative space."
+  ].join("\n");
+
+  const japanese = [
+    `用途: ${toJapaneseUsage(values.usage)}向けの画像生成プロンプト。`,
+    `主体: ${sentence(values.subject, "主役となる被写体")}。`,
+    `場景: ${sentence(values.scene, "素材制作に使いやすいビジュアルシーン")}。`,
+    `構図: ${compactList([values.composition, pJa.composition])}。`,
+    `ライティング: ${pJa.lighting}。`,
+    `色味: ${compactList([values.colors, pJa.colorPalette])}。`,
+    `トンマナ: ${compactList([values.tone, pJa.mood])}。`,
+    `スタイル方向性: ${pJa.style}。`,
+    `質感: ${pJa.texture}。`,
+    `必ず入れたい要素: ${sentence(values.mustInclude, "主体が明確に見え、デザインで使いやすい余白がある")}。`,
+    `用途メモ: ${sentence(values.notes, "LP、広告、Web、動画素材として使いやすい完成度")}。`,
+    "商用デザインに使いやすく、主役が明確で、余白が整理されたビジュアルにする。"
+  ].join("\n");
+
+  const negative = compactList([values.avoid, p.negative]);
+
+  const settings = [
+    `Aspect ratio: ${values.ratio || preset.recommendedSettings.aspectRatio}`,
+    `Reference: ${preset.title}`,
+    `Reference usage: ${preset.recommendedSettings.referenceUse}`,
+    `Variation advice: ${preset.recommendedSettings.variationAdvice}`,
+    "If the generation tool supports seed values, keep the same seed for visual consistency across a series."
+  ].join("\n");
+
+  els.englishOutput.value = english;
+  els.japaneseOutput.value = japanese;
+  els.negativeOutput.value = negative;
+  els.settingsOutput.value = settings;
+}
+
+function toJapaneseUsage(value) {
+  const map = {
+    "LP hero visual": "LPヒーロー",
+    "advertising banner visual": "広告バナー",
+    "article LP key visual": "記事LP",
+    "web section background visual": "Webセクション",
+    "video thumbnail or background asset": "動画素材",
+    "social media advertising visual": "SNS広告"
+  };
+  return map[value] || value;
+}
+
+function renderTags() {
+  const tags = new Set(["all"]);
+  state.gallery.forEach((item) => item.tags.forEach((tag) => tags.add(tag)));
+
+  els.tagFilter.innerHTML = "";
+  [...tags].forEach((tag) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `tag-button${state.activeTag === tag ? " is-active" : ""}`;
+    button.textContent = tag === "all" ? "All" : tag;
+    button.addEventListener("click", () => {
+      state.activeTag = tag;
+      renderTags();
+      renderGallery();
+    });
+    els.tagFilter.append(button);
+  });
+}
+
+function renderGallery() {
+  const visibleItems = state.activeTag === "all"
+    ? state.gallery
+    : state.gallery.filter((item) => item.tags.includes(state.activeTag));
+
+  els.galleryGrid.innerHTML = "";
+  visibleItems.forEach((item) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `preset-card${item.id === state.selectedPresetId ? " is-selected" : ""}`;
+    button.innerHTML = `
+      <img src="${item.image}" alt="${item.title}">
+      <strong>${item.title}</strong>
+      <p>${item.preset.style}</p>
+      <span class="tag-list">
+        ${item.tags.map((tag) => `<span class="tag-chip">${tag}</span>`).join("")}
+      </span>
+    `;
+    button.addEventListener("click", () => {
+      state.selectedPresetId = item.id;
+      updateSelectedPresetLabel();
+      renderGallery();
+      buildPrompts();
+    });
+    els.galleryGrid.append(button);
+  });
+}
+
+function updateSelectedPresetLabel() {
+  const preset = getSelectedPreset();
+  els.selectedPresetLabel.textContent = preset ? preset.title : "プリセット未選択";
+}
+
+function showToast(message) {
+  els.toast.textContent = message;
+  els.toast.classList.add("is-visible");
+  window.clearTimeout(showToast.timer);
+  showToast.timer = window.setTimeout(() => {
+    els.toast.classList.remove("is-visible");
+  }, 1800);
+}
+
+async function copyOutput(targetId) {
+  const target = document.querySelector(`#${targetId}`);
+  if (!target.value.trim()) {
+    showToast("コピーする内容がありません");
+    return;
+  }
+
+  try {
+    await navigator.clipboard.writeText(target.value);
+    showToast("コピーしました");
+  } catch {
+    target.select();
+    document.execCommand("copy");
+    showToast("コピーしました");
+  }
+}
+
+async function loadGallery() {
+  if (window.location.protocol === "file:") {
+    els.galleryStatus.textContent = "内蔵データ";
+    return;
+  }
+
+  try {
+    const response = await fetch("data/gallery.json", { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error("Gallery JSON not found");
+    }
+    state.gallery = await response.json();
+    state.selectedPresetId = state.gallery[0]?.id || "";
+    els.galleryStatus.textContent = "JSON読込済";
+  } catch {
+    state.gallery = FALLBACK_GALLERY;
+    state.selectedPresetId = FALLBACK_GALLERY[0].id;
+    els.galleryStatus.textContent = "内蔵データ";
+  }
+}
+
+function bindEvents() {
+  els.form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    buildPrompts();
+    showToast("プロンプトを生成しました");
+  });
+
+  document.querySelectorAll(".copy-button").forEach((button) => {
+    button.addEventListener("click", () => copyOutput(button.dataset.copyTarget));
+  });
+
+  els.clearButton.addEventListener("click", () => {
+    els.form.reset();
+    buildPrompts();
+    showToast("入力をクリアしました");
+  });
+
+  fieldIds.forEach((id) => {
+    document.querySelector(`#${id}`).addEventListener("input", buildPrompts);
+  });
+}
+
+async function init() {
+  bindEvents();
+  await loadGallery();
+  renderTags();
+  renderGallery();
+  updateSelectedPresetLabel();
+  buildPrompts();
+}
+
+init();

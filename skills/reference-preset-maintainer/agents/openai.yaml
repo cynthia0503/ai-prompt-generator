@@ -1,0 +1,8 @@
+interface:
+  display_name: "Reference Preset Maintainer"
+  short_description: "Add image-based prompt presets to this tool"
+  brand_color: "#176B5B"
+  default_prompt: "Use $reference-preset-maintainer to add this uploaded image as a new reference preset using only the elements I want to reuse."
+
+policy:
+  allow_implicit_invocation: true

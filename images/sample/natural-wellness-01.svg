@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-label="Natural wellness sample">
+  <rect width="960" height="600" fill="#f7f3eb"/>
+  <rect x="0" y="370" width="960" height="230" fill="#e4d5bd"/>
+  <ellipse cx="470" cy="430" rx="250" ry="42" fill="#c7b598" opacity="0.55"/>
+  <rect x="410" y="214" width="130" height="210" rx="18" fill="#f8f6ef"/>
+  <rect x="430" y="250" width="90" height="58" rx="10" fill="#b9c8ad"/>
+  <rect x="446" y="330" width="58" height="9" rx="4" fill="#9caf8e"/>
+  <rect x="454" y="352" width="42" height="7" rx="3" fill="#c7d0b8"/>
+  <circle cx="630" cy="390" r="50" fill="#d6c6a8"/>
+  <path d="M300 365c-42-70-12-142 58-180 20 82-2 145-58 180Z" fill="#879d74"/>
+  <path d="M313 360c38-60 98-78 165-44-44 56-100 72-165 44Z" fill="#a4b792"/>
+  <path d="M658 326c22-82 82-128 164-120-18 82-74 126-164 120Z" fill="#93a97f"/>
+  <path d="M628 374c50-52 112-58 184-18-58 42-118 48-184 18Z" fill="#b0c09d"/>
+</svg>

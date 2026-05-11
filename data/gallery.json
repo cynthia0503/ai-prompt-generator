@@ -1,0 +1,118 @@
+[
+  {
+    "id": "clean-lp-hero-01",
+    "title": "Clean LP Hero",
+    "image": "images/sample/clean-lp-hero-01.svg",
+    "tags": ["LP", "clean", "cosmetic", "premium"],
+    "preset": {
+      "composition": "centered product composition with generous whitespace for copy placement",
+      "lighting": "soft natural morning light, low contrast, gentle shadows",
+      "colorPalette": "white, pale blue, soft gray",
+      "mood": "clean, premium, trustworthy, calm",
+      "texture": "smooth ceramic surface, subtle glossy reflection",
+      "style": "Japanese skincare LP hero advertising visual",
+      "negative": "busy background, harsh shadows, clutter, text, logo, watermark"
+    },
+    "presetJa": {
+      "composition": "コピーを配置しやすい余白を広く取った、商品中央配置の構図",
+      "lighting": "柔らかい朝の自然光、低コントラスト、やさしい影",
+      "colorPalette": "白、淡いブルー、ソフトグレー",
+      "mood": "清潔感、高級感、信頼感、落ち着き",
+      "texture": "なめらかなセラミック面、控えめな光沢反射",
+      "style": "日本向けスキンケアLPのヒーロー広告ビジュアル",
+      "negative": "散らかった背景、強い影、過度な装飾、文字、ロゴ、透かし"
+    },
+    "recommendedSettings": {
+      "aspectRatio": "16:9",
+      "referenceUse": "Use this image as a style reference if the generation tool supports reference images.",
+      "variationAdvice": "Keep the same seed and change only the subject for consistent series generation."
+    }
+  },
+  {
+    "id": "pastel-translucent-flare-01",
+    "title": "パステル透明感フレア",
+    "image": "images/sample/pastel-translucent-flare-01.jpg",
+    "tags": ["cosmetic", "pastel", "transparent", "flare", "premium"],
+    "preset": {
+      "composition": "soft close-up product composition with layered translucent objects and gentle diagonal movement",
+      "lighting": "bright diffused light with pastel lens flares, pearlescent highlights, soft glow, low contrast",
+      "colorPalette": "milky white, pale lavender, powder blue, soft pink, iridescent pastel tones",
+      "mood": "transparent, airy, delicate, dreamy, premium, clean",
+      "texture": "frosted glass, translucent liquid, pearlescent shimmer, soft prism reflection, glossy wet highlights",
+      "style": "delicate beauty advertising visual with pastel flare lighting and clear translucent atmosphere",
+      "negative": "heavy shadows, dark background, strong contrast, muddy colors, hard edges, clutter, text, logo, watermark"
+    },
+    "presetJa": {
+      "composition": "透明感のあるオブジェクトを重ねた、やわらかな接写構図と穏やかな斜めの動き",
+      "lighting": "明るく拡散した光、パステル調のフレア、真珠のようなハイライト、柔らかな発光感、低コントラスト",
+      "colorPalette": "ミルキーホワイト、淡いラベンダー、パウダーブルー、ソフトピンク、虹色を含むパステルトーン",
+      "mood": "透明感、軽やか、繊細、夢のよう、高級感、清潔感",
+      "texture": "すりガラス、透明感のある液体、パールのきらめき、プリズム反射、みずみずしい光沢",
+      "style": "パステルのフレア光と透明感を活かした、繊細なビューティー広告ビジュアル",
+      "negative": "重い影、暗い背景、強すぎるコントラスト、濁った色、硬い輪郭、散らかり、文字、ロゴ、透かし"
+    },
+    "recommendedSettings": {
+      "aspectRatio": "4:5",
+      "referenceUse": "Use this image as a color, flare, and translucency reference if the generation tool supports reference images.",
+      "variationAdvice": "Keep pastel flare lighting and translucent texture fixed while changing the subject for a consistent beauty-style series."
+    }
+  },
+  {
+    "id": "saas-ad-01",
+    "title": "Trust SaaS Ad",
+    "image": "images/sample/saas-ad-01.svg",
+    "tags": ["BtoB", "SaaS", "trust", "web"],
+    "preset": {
+      "composition": "clean dashboard-inspired composition with clear focal area and organized spacing",
+      "lighting": "even studio lighting, soft highlights, no dramatic shadows",
+      "colorPalette": "deep green, white, slate gray, restrained accent color",
+      "mood": "reliable, modern, practical, professional",
+      "texture": "smooth digital surfaces, subtle glass reflection, crisp edges",
+      "style": "Japanese BtoB SaaS advertising visual for web and LP sections",
+      "negative": "chaotic UI, unreadable text, fake logo, overly futuristic neon, clutter"
+    },
+    "presetJa": {
+      "composition": "焦点が明確で余白が整理された、ダッシュボードを想起させるクリーンな構図",
+      "lighting": "均一なスタジオライティング、柔らかいハイライト、強い影なし",
+      "colorPalette": "深いグリーン、白、スレートグレー、控えめなアクセントカラー",
+      "mood": "信頼感、現代的、実用的、プロフェッショナル",
+      "texture": "なめらかなデジタル面、控えめなガラス反射、シャープなエッジ",
+      "style": "日本向けBtoB SaaSのWeb・LP広告ビジュアル",
+      "negative": "混沌としたUI、読めない文字、架空ロゴ、過度に未来的なネオン、散らかり"
+    },
+    "recommendedSettings": {
+      "aspectRatio": "16:9",
+      "referenceUse": "Use this image as a layout and mood reference if supported.",
+      "variationAdvice": "Keep the layout and palette stable when generating a campaign series."
+    }
+  },
+  {
+    "id": "natural-wellness-01",
+    "title": "Natural Wellness",
+    "image": "images/sample/natural-wellness-01.svg",
+    "tags": ["wellness", "natural", "organic", "article"],
+    "preset": {
+      "composition": "soft lifestyle composition with natural props and moderate whitespace",
+      "lighting": "warm diffused daylight, gentle highlights, natural shadows",
+      "colorPalette": "warm white, sage green, light wood, muted beige accents",
+      "mood": "healthy, approachable, natural, relaxed",
+      "texture": "paper, linen, wood, matte packaging, organic surface details",
+      "style": "Japanese wellness article LP visual with natural editorial feeling",
+      "negative": "medical fear appeal, heavy contrast, artificial neon color, messy table, text"
+    },
+    "presetJa": {
+      "composition": "自然な小物と適度な余白を使った、柔らかいライフスタイル構図",
+      "lighting": "暖かく拡散した日中の自然光、やさしいハイライト、自然な影",
+      "colorPalette": "暖かい白、セージグリーン、明るい木目、控えめなベージュ",
+      "mood": "健康的、親しみやすい、自然体、リラックス",
+      "texture": "紙、リネン、木、マットなパッケージ、有機的な表面感",
+      "style": "自然なエディトリアル感のある日本向けウェルネス記事LPビジュアル",
+      "negative": "医療的な恐怖訴求、強すぎるコントラスト、人工的なネオン色、散らかったテーブル、文字"
+    },
+    "recommendedSettings": {
+      "aspectRatio": "4:5",
+      "referenceUse": "Use this image as a tone and color reference if supported.",
+      "variationAdvice": "Use the same palette for article thumbnails and supporting LP images."
+    }
+  }
+]

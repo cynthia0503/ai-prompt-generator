@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI素材生成プロンプト・リファレンス管理ツール</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Prompt & Reference Preset Manager</p>
+        <h1>AI素材生成プロンプト管理</h1>
+      </div>
+      <p class="header-note">LP / 広告 / Web / 動画素材向けの英日プロンプト草案を生成します。</p>
+    </header>
+
+    <main class="app-shell">
+      <section class="input-panel" aria-labelledby="input-heading">
+        <div class="section-heading">
+          <h2 id="input-heading">素材要件</h2>
+          <button class="ghost-button" id="clearButton" type="button">クリア</button>
+        </div>
+
+        <form id="promptForm" class="prompt-form">
+          <label>
+            <span>用途</span>
+            <select id="usage">
+              <option value="LP hero visual">LPヒーロー</option>
+              <option value="advertising banner visual">広告バナー</option>
+              <option value="article LP key visual">記事LP</option>
+              <option value="web section background visual">Webセクション</option>
+              <option value="video thumbnail or background asset">動画素材</option>
+              <option value="social media advertising visual">SNS広告</option>
+            </select>
+          </label>
+
+          <label>
+            <span>主体</span>
+            <input id="subject" type="text" placeholder="例: スキンケア美容液ボトル">
+          </label>
+
+          <label>
+            <span>場景</span>
+            <textarea id="scene" rows="3" placeholder="例: 朝の光が入る明るいバスルームカウンター"></textarea>
+          </label>
+
+          <label>
+            <span>構図</span>
+            <input id="composition" type="text" placeholder="例: 中央配置、余白多め、コピーを載せやすい">
+          </label>
+
+          <label>
+            <span>トンマナ</span>
+            <input id="tone" type="text" placeholder="例: 高級感、清潔感、信頼感">
+          </label>
+
+          <label>
+            <span>色味</span>
+            <input id="colors" type="text" placeholder="例: 白、淡いブルー、ライトグレー">
+          </label>
+
+          <label>
+            <span>必ず入れたい要素</span>
+            <textarea id="mustInclude" rows="2" placeholder="例: 商品が明確に見える、背景に自然光"></textarea>
+          </label>
+
+          <label>
+            <span>禁止事項</span>
+            <textarea id="avoid" rows="2" placeholder="例: 文字、ロゴ、透かし、手、散らかった背景"></textarea>
+          </label>
+
+          <div class="form-grid">
+            <label>
+              <span>比率</span>
+              <select id="ratio">
+                <option value="16:9">16:9</option>
+                <option value="4:5">4:5</option>
+                <option value="1:1">1:1</option>
+                <option value="9:16">9:16</option>
+                <option value="3:2">3:2</option>
+              </select>
+            </label>
+
+            <label>
+              <span>出力の用途メモ</span>
+              <input id="notes" type="text" placeholder="例: FVで右側にコピー配置">
+            </label>
+          </div>
+
+          <button class="primary-button" type="submit">プロンプトを生成</button>
+        </form>
+      </section>
+
+      <section class="gallery-panel" aria-labelledby="gallery-heading">
+        <div class="section-heading">
+          <h2 id="gallery-heading">リファレンスプリセット</h2>
+          <span class="status-pill" id="galleryStatus">読み込み中</span>
+        </div>
+        <p class="panel-help">参考画像はAIで解析されません。選択したプリセットの構図・色味・トンマナを下のプロンプトに反映します。</p>
+        <div class="tag-filter" id="tagFilter" aria-label="タグフィルター"></div>
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </section>
+
+      <section class="output-panel" aria-labelledby="output-heading">
+        <div class="section-heading">
+          <h2 id="output-heading">生成結果</h2>
+          <span class="selected-preset" id="selectedPresetLabel">プリセット未選択</span>
+        </div>
+
+        <div class="output-block">
+          <div class="output-title">
+            <h3>English Prompt</h3>
+            <button class="copy-button" data-copy-target="englishOutput" type="button">Copy</button>
+          </div>
+          <textarea id="englishOutput" rows="9" readonly></textarea>
+        </div>
+
+        <div class="output-block">
+          <div class="output-title">
+            <h3>日本語 Prompt</h3>
+            <button class="copy-button" data-copy-target="japaneseOutput" type="button">Copy</button>
+          </div>
+          <textarea id="japaneseOutput" rows="9" readonly></textarea>
+        </div>
+
+        <div class="output-block">
+          <div class="output-title">
+            <h3>Negative Prompt</h3>
+            <button class="copy-button" data-copy-target="negativeOutput" type="button">Copy</button>
+          </div>
+          <textarea id="negativeOutput" rows="4" readonly></textarea>
+        </div>
+
+        <div class="output-block">
+          <div class="output-title">
+            <h3>Recommended Settings</h3>
+            <button class="copy-button" data-copy-target="settingsOutput" type="button">Copy</button>
+          </div>
+          <textarea id="settingsOutput" rows="5" readonly></textarea>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
