@@ -56,7 +56,7 @@ Build only the following:
 
 1. Input form for asset requirements.
 2. Manual reference preset gallery.
-3. Image tags and preset metadata.
+3. Image tags, multi-tag filtering, and preset metadata.
 4. Click a reference preset to apply its style recipe.
 5. Generate structured English prompt.
 6. Generate structured Japanese prompt.
@@ -163,6 +163,14 @@ Each gallery item should define stable creative controls:
 - Style
 - Negative terms
 - Recommended settings
+
+Tags are used for filtering. The UI supports selecting up to 3 tags at once. Multiple selected tags should show presets that include at least one selected tag.
+
+Display tags under these top-level groups while keeping all child tags cross-selectable:
+
+- 表現形式: 写真 / イラスト / コラージュ / UI / 3D文字
+- 雰囲気・質感: 透明感 / 高級感 / POP / 清潔感 / パステル / フレア / ナチュラル / 信頼感 / 余白 / 立体感 / 光沢
+- 用途・構図: 背景 / 人物 / 商品 / 文字 / バナー / LP / LP素材 / 記事LP / Web
 
 ## Gallery JSON Schema
 

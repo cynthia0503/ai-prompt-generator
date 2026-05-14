@@ -110,11 +110,14 @@ Choose 3 to 6 tags.
 
 Use a mix of:
 
-- Usage tags: `LP`, `ad`, `web`, `article`, `video`
-- Domain tags: `cosmetic`, `SaaS`, `wellness`, `food`, `fashion`, `medical`
-- Style tags: `clean`, `premium`, `natural`, `minimal`, `trust`, `warm`
+- 表現形式 tags: `写真`, `イラスト`, `コラージュ`, `UI`, `3D文字`
+- 雰囲気・質感 tags: `透明感`, `高級感`, `POP`, `清潔感`, `パステル`, `フレア`, `ナチュラル`, `信頼感`, `余白`, `立体感`, `光沢`
+- 用途・構図 tags: `背景`, `人物`, `商品`, `文字`, `バナー`, `LP`, `LP素材`, `記事LP`, `Web`
+- Domain tags when useful: `コスメ`, `SaaS`, `ウェルネス`, `食品`, `ファッション`, `医療`
 
-If usage is unknown, use domain/style tags and one broad tag such as `web` only when visually appropriate.
+Prefer Japanese tags for user-facing filtering. If usage is unknown, use category/domain/style tags and one broad tag such as `Web` only when visually appropriate.
+
+The app supports OR-based multi-tag filtering with a maximum of 3 selected tags. Choose tags that work well as broad discovery filters, such as `商品`, `透明感`, `背景`, or `ナチュラル`.
 
 ## Image Handling
 

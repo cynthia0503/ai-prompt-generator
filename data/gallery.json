@@ -3,7 +3,7 @@
     "id": "clean-lp-hero-01",
     "title": "Clean LP Hero",
     "image": "images/sample/clean-lp-hero-01.svg",
-    "tags": ["LP", "clean", "cosmetic", "premium"],
+    "tags": ["LP", "商品", "コスメ", "清潔感", "高級感", "余白"],
     "preset": {
       "composition": "centered product composition with generous whitespace for copy placement",
       "lighting": "soft natural morning light, low contrast, gentle shadows",
@@ -32,7 +32,7 @@
     "id": "pastel-translucent-flare-01",
     "title": "パステル透明感フレア",
     "image": "images/sample/pastel-translucent-flare-01.jpg",
-    "tags": ["cosmetic", "pastel", "transparent", "flare", "premium"],
+    "tags": ["商品", "コスメ", "パステル", "透明感", "フレア", "高級感"],
     "preset": {
       "composition": "soft close-up product composition with layered translucent objects and gentle diagonal movement",
       "lighting": "bright diffused light with pastel lens flares, pearlescent highlights, soft glow, low contrast",
@@ -58,10 +58,39 @@
     }
   },
   {
+    "id": "puffy-3d-text-texture-01",
+    "title": "ぷっくり3D文字質感",
+    "image": "images/sample/txt-3d.png",
+    "tags": ["3D文字", "文字", "POP", "立体感", "光沢", "バナー"],
+    "preset": {
+      "composition": "large centered typographic composition with thick rounded 3D lettering and clear readable character shapes",
+      "lighting": "soft studio lighting with bright specular highlights, subtle rim glow, and gentle cast shadows that enhance depth",
+      "colorPalette": "color is flexible and should follow the user's chosen palette; do not lock to the reference image color",
+      "mood": "playful, bold, glossy, dimensional, eye-catching",
+      "texture": "inflated puffy lettering, smooth plastic or gel-like surface, glossy highlights, rounded bevels, soft extrusion depth",
+      "style": "3D typographic visual focused on tactile dimensional text texture rather than a specific color scheme",
+      "negative": "flat text, thin strokes, hard angular bevels, rough texture, unreadable letters, broken characters, unwanted extra words, watermark"
+    },
+    "presetJa": {
+      "composition": "読みやすい文字形を保った、大きめ中央配置の太く丸い3Dタイポグラフィ構図",
+      "lighting": "奥行きを強調する柔らかなスタジオ光、明るい鏡面ハイライト、控えめなリム光、やさしい落ち影",
+      "colorPalette": "色はユーザー指定の配色に合わせる。参考画像の色には固定しない",
+      "mood": "遊び心、力強さ、光沢感、立体感、目を引く印象",
+      "texture": "ぷっくり膨らんだ文字、なめらかなプラスチックやジェルのような表面、光沢ハイライト、丸いベベル、柔らかな押し出しの奥行き",
+      "style": "特定の色ではなく、触れられそうな立体文字の質感にフォーカスした3Dタイポグラフィビジュアル",
+      "negative": "平面的な文字、細すぎる線、硬い角張ったベベル、ざらついた質感、読めない文字、崩れた字形、不要な追加文字、透かし"
+    },
+    "recommendedSettings": {
+      "aspectRatio": "16:9",
+      "referenceUse": "Use this image as a 3D text material and depth reference only; choose colors separately in the prompt.",
+      "variationAdvice": "Keep rounded puffy extrusion, glossy highlights, and readable letterforms fixed while changing the text content and color palette."
+    }
+  },
+  {
     "id": "saas-ad-01",
     "title": "Trust SaaS Ad",
     "image": "images/sample/saas-ad-01.svg",
-    "tags": ["BtoB", "SaaS", "trust", "web"],
+    "tags": ["BtoB", "SaaS", "UI", "Web", "信頼感", "背景"],
     "preset": {
       "composition": "clean dashboard-inspired composition with clear focal area and organized spacing",
       "lighting": "even studio lighting, soft highlights, no dramatic shadows",
@@ -90,7 +119,7 @@
     "id": "natural-wellness-01",
     "title": "Natural Wellness",
     "image": "images/sample/natural-wellness-01.svg",
-    "tags": ["wellness", "natural", "organic", "article"],
+    "tags": ["記事LP", "商品", "ウェルネス", "ナチュラル", "背景"],
     "preset": {
       "composition": "soft lifestyle composition with natural props and moderate whitespace",
       "lighting": "warm diffused daylight, gentle highlights, natural shadows",

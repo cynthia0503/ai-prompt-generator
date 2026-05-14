@@ -97,7 +97,11 @@
           <h2 id="gallery-heading">リファレンスプリセット</h2>
           <span class="status-pill" id="galleryStatus">読み込み中</span>
         </div>
-        <p class="panel-help">参考画像はAIで解析されません。選択したプリセットの構図・色味・トンマナを下のプロンプトに反映します。</p>
+        <p class="panel-help">参考画像はAIで解析されません。選択したプリセットの構図・色味・トンマナを下のプロンプトに反映します。タグは最大3個まで選択できます。</p>
+        <div class="tag-toolbar">
+          <span id="tagSummary">すべて表示</span>
+          <button class="ghost-button small-button" id="clearTagsButton" type="button">タグ解除</button>
+        </div>
         <div class="tag-filter" id="tagFilter" aria-label="タグフィルター"></div>
         <div class="gallery-grid" id="galleryGrid"></div>
       </section>

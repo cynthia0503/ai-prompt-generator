@@ -3,7 +3,7 @@ const FALLBACK_GALLERY = [
     id: "clean-lp-hero-01",
     title: "Clean LP Hero",
     image: "images/sample/clean-lp-hero-01.svg",
-    tags: ["LP", "clean", "cosmetic", "premium"],
+    tags: ["LP", "商品", "コスメ", "清潔感", "高級感", "余白"],
     preset: {
       composition: "centered product composition with generous whitespace for copy placement",
       lighting: "soft natural morning light, low contrast, gentle shadows",
@@ -32,7 +32,7 @@ const FALLBACK_GALLERY = [
     id: "pastel-translucent-flare-01",
     title: "パステル透明感フレア",
     image: "images/sample/pastel-translucent-flare-01.jpg",
-    tags: ["cosmetic", "pastel", "transparent", "flare", "premium"],
+    tags: ["商品", "コスメ", "パステル", "透明感", "フレア", "高級感"],
     preset: {
       composition: "soft close-up product composition with layered translucent objects and gentle diagonal movement",
       lighting: "bright diffused light with pastel lens flares, pearlescent highlights, soft glow, low contrast",
@@ -58,10 +58,39 @@ const FALLBACK_GALLERY = [
     }
   },
   {
+    id: "puffy-3d-text-texture-01",
+    title: "ぷっくり3D文字質感",
+    image: "images/sample/txt-3d.png",
+    tags: ["3D文字", "文字", "POP", "立体感", "光沢", "バナー"],
+    preset: {
+      composition: "large centered typographic composition with thick rounded 3D lettering and clear readable character shapes",
+      lighting: "soft studio lighting with bright specular highlights, subtle rim glow, and gentle cast shadows that enhance depth",
+      colorPalette: "color is flexible and should follow the user's chosen palette; do not lock to the reference image color",
+      mood: "playful, bold, glossy, dimensional, eye-catching",
+      texture: "inflated puffy lettering, smooth plastic or gel-like surface, glossy highlights, rounded bevels, soft extrusion depth",
+      style: "3D typographic visual focused on tactile dimensional text texture rather than a specific color scheme",
+      negative: "flat text, thin strokes, hard angular bevels, rough texture, unreadable letters, broken characters, unwanted extra words, watermark"
+    },
+    presetJa: {
+      composition: "読みやすい文字形を保った、大きめ中央配置の太く丸い3Dタイポグラフィ構図",
+      lighting: "奥行きを強調する柔らかなスタジオ光、明るい鏡面ハイライト、控えめなリム光、やさしい落ち影",
+      colorPalette: "色はユーザー指定の配色に合わせる。参考画像の色には固定しない",
+      mood: "遊び心、力強さ、光沢感、立体感、目を引く印象",
+      texture: "ぷっくり膨らんだ文字、なめらかなプラスチックやジェルのような表面、光沢ハイライト、丸いベベル、柔らかな押し出しの奥行き",
+      style: "特定の色ではなく、触れられそうな立体文字の質感にフォーカスした3Dタイポグラフィビジュアル",
+      negative: "平面的な文字、細すぎる線、硬い角張ったベベル、ざらついた質感、読めない文字、崩れた字形、不要な追加文字、透かし"
+    },
+    recommendedSettings: {
+      aspectRatio: "16:9",
+      referenceUse: "Use this image as a 3D text material and depth reference only; choose colors separately in the prompt.",
+      variationAdvice: "Keep rounded puffy extrusion, glossy highlights, and readable letterforms fixed while changing the text content and color palette."
+    }
+  },
+  {
     id: "saas-ad-01",
     title: "Trust SaaS Ad",
     image: "images/sample/saas-ad-01.svg",
-    tags: ["BtoB", "SaaS", "trust", "web"],
+    tags: ["BtoB", "SaaS", "UI", "Web", "信頼感", "背景"],
     preset: {
       composition: "clean dashboard-inspired composition with clear focal area and organized spacing",
       lighting: "even studio lighting, soft highlights, no dramatic shadows",
@@ -90,7 +119,7 @@ const FALLBACK_GALLERY = [
     id: "natural-wellness-01",
     title: "Natural Wellness",
     image: "images/sample/natural-wellness-01.svg",
-    tags: ["wellness", "natural", "organic", "article"],
+    tags: ["記事LP", "商品", "ウェルネス", "ナチュラル", "背景"],
     preset: {
       composition: "soft lifestyle composition with natural props and moderate whitespace",
       lighting: "warm diffused daylight, gentle highlights, natural shadows",
@@ -120,13 +149,32 @@ const FALLBACK_GALLERY = [
 const state = {
   gallery: FALLBACK_GALLERY,
   selectedPresetId: FALLBACK_GALLERY[0].id,
-  activeTag: "all"
+  selectedTags: new Set()
 };
+
+const MAX_SELECTED_TAGS = 3;
+
+const TAG_GROUPS = [
+  {
+    label: "表現形式",
+    tags: ["写真", "イラスト", "コラージュ", "UI", "3D文字"]
+  },
+  {
+    label: "雰囲気・質感",
+    tags: ["透明感", "高級感", "POP", "清潔感", "パステル", "フレア", "ナチュラル", "信頼感", "余白", "立体感", "光沢"]
+  },
+  {
+    label: "用途・構図",
+    tags: ["背景", "人物", "商品", "文字", "バナー", "LP", "LP素材", "記事LP", "Web"]
+  }
+];
 
 const els = {
   form: document.querySelector("#promptForm"),
   galleryGrid: document.querySelector("#galleryGrid"),
   tagFilter: document.querySelector("#tagFilter"),
+  tagSummary: document.querySelector("#tagSummary"),
+  clearTagsButton: document.querySelector("#clearTagsButton"),
   galleryStatus: document.querySelector("#galleryStatus"),
   selectedPresetLabel: document.querySelector("#selectedPresetLabel"),
   toast: document.querySelector("#toast"),
@@ -241,30 +289,77 @@ function toJapaneseUsage(value) {
 }
 
 function renderTags() {
-  const tags = new Set(["all"]);
+  const tags = new Set();
   state.gallery.forEach((item) => item.tags.forEach((tag) => tags.add(tag)));
+  TAG_GROUPS.forEach((group) => group.tags.forEach((tag) => tags.add(tag)));
+  const groupedTags = new Set(TAG_GROUPS.flatMap((group) => group.tags));
+  const otherTags = [...tags].filter((tag) => !groupedTags.has(tag));
 
   els.tagFilter.innerHTML = "";
-  [...tags].forEach((tag) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = `tag-button${state.activeTag === tag ? " is-active" : ""}`;
-    button.textContent = tag === "all" ? "All" : tag;
-    button.addEventListener("click", () => {
-      state.activeTag = tag;
-      renderTags();
-      renderGallery();
-    });
-    els.tagFilter.append(button);
+  TAG_GROUPS.forEach((group) => {
+    const groupEl = document.createElement("div");
+    groupEl.className = "tag-group";
+    groupEl.innerHTML = `<h3>${group.label}</h3>`;
+    const list = document.createElement("div");
+    list.className = "tag-button-list";
+    group.tags.forEach((tag) => list.append(createTagButton(tag)));
+    groupEl.append(list);
+    els.tagFilter.append(groupEl);
   });
+
+  if (otherTags.length > 0) {
+    const groupEl = document.createElement("div");
+    groupEl.className = "tag-group";
+    groupEl.innerHTML = "<h3>その他</h3>";
+    const list = document.createElement("div");
+    list.className = "tag-button-list";
+    otherTags.sort((a, b) => a.localeCompare(b, "ja")).forEach((tag) => {
+      list.append(createTagButton(tag));
+    });
+    groupEl.append(list);
+    els.tagFilter.append(groupEl);
+  }
+
+  updateTagSummary();
+}
+
+function createTagButton(tag) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = `tag-button${state.selectedTags.has(tag) ? " is-active" : ""}`;
+  button.textContent = tag;
+  button.setAttribute("aria-pressed", String(state.selectedTags.has(tag)));
+  button.addEventListener("click", () => {
+    if (state.selectedTags.has(tag)) {
+      state.selectedTags.delete(tag);
+    } else if (state.selectedTags.size >= MAX_SELECTED_TAGS) {
+      showToast(`タグは${MAX_SELECTED_TAGS}個まで選択できます`);
+      return;
+    } else {
+      state.selectedTags.add(tag);
+    }
+    renderTags();
+    renderGallery();
+  });
+  return button;
 }
 
 function renderGallery() {
-  const visibleItems = state.activeTag === "all"
+  const selectedTags = [...state.selectedTags];
+  const visibleItems = selectedTags.length === 0
     ? state.gallery
-    : state.gallery.filter((item) => item.tags.includes(state.activeTag));
+    : state.gallery.filter((item) => selectedTags.some((tag) => item.tags.includes(tag)));
 
   els.galleryGrid.innerHTML = "";
+  if (visibleItems.length === 0) {
+    const empty = document.createElement("div");
+    empty.className = "empty-gallery";
+    empty.textContent = "一致するリファレンスがありません。タグを減らしてください。";
+    els.galleryGrid.append(empty);
+    updateTagSummary(0);
+    return;
+  }
+
   visibleItems.forEach((item) => {
     const button = document.createElement("button");
     button.type = "button";
@@ -285,6 +380,18 @@ function renderGallery() {
     });
     els.galleryGrid.append(button);
   });
+
+  updateTagSummary(visibleItems.length);
+}
+
+function updateTagSummary(visibleCount = null) {
+  const selectedTags = [...state.selectedTags];
+  const count = visibleCount ?? state.gallery.filter((item) => (
+    selectedTags.length === 0 || selectedTags.some((tag) => item.tags.includes(tag))
+  )).length;
+  els.tagSummary.textContent = selectedTags.length === 0
+    ? `すべて表示: ${count}件`
+    : `選択中: ${selectedTags.join(" / ")} のいずれか / ${count}件 (${selectedTags.length}/${MAX_SELECTED_TAGS})`;
 }
 
 function updateSelectedPresetLabel() {
@@ -354,6 +461,13 @@ function bindEvents() {
     els.form.reset();
     buildPrompts();
     showToast("入力をクリアしました");
+  });
+
+  els.clearTagsButton.addEventListener("click", () => {
+    state.selectedTags.clear();
+    renderTags();
+    renderGallery();
+    showToast("タグを解除しました");
   });
 
   fieldIds.forEach((id) => {
