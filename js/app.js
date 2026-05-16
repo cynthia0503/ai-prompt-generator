@@ -221,6 +221,7 @@ const fieldIds = [
   "composition",
   "tone",
   "colors",
+  "stylePriority",
   "mustInclude",
   "avoid",
   "ratio",
@@ -245,11 +246,44 @@ function getSelectedPreset() {
   return state.gallery.find((item) => item.id === state.selectedPresetId) || state.gallery[0];
 }
 
+const STYLE_PRIORITY_COPY = {
+  balanced: {
+    en: "Apply the selected reference as an overall style direction, while keeping the user's subject and scene requirements dominant.",
+    ja: "選択した参考プリセットを全体のスタイル方向として反映しつつ、主体と場景の指定を優先する。",
+    negative: ""
+  },
+  "linework-coloring": {
+    en: "Prioritize the reference's expression method, linework, brush touch, and coloring style. Keep the output clearly illustrated and hand-drawn; do not drift into photorealistic or semi-realistic photo style.",
+    ja: "参考の表現形式、線の筆触、ブラシ感、上色方式を最優先する。写真風や半写実ではなく、明確に手描きイラストとして仕上げる。",
+    negative: "photorealistic, realistic photo, semi-realistic portrait, live action, cinematic photo, realistic skin texture, glossy skin, 3D render"
+  },
+  "light-color-only": {
+    en: "Use only the reference's color mood and lighting atmosphere. Do not import its subject, material, composition, or product-like details.",
+    ja: "参考からは色味と光の雰囲気だけを使う。被写体、素材感、構図、商品写真的な要素は取り込まない。",
+    negative: "unwanted reference subject, product photo look, glass material unless requested, liquid texture unless requested"
+  },
+  "texture-only": {
+    en: "Use only the reference's tactile texture and surface feeling. Keep the user's subject, scene, composition, and color direction dominant.",
+    ja: "参考からは触感や表面の質感だけを使う。主体、場景、構図、色味はユーザー指定を優先する。",
+    negative: "unwanted reference subject, copied composition, copied color palette"
+  },
+  "composition-only": {
+    en: "Use only the reference's layout and composition logic. Do not import its color palette, material texture, subject, or rendering style.",
+    ja: "参考からはレイアウトと構図の考え方だけを使う。色味、素材感、被写体、描画スタイルは取り込まない。",
+    negative: "copied color palette, copied material texture, unwanted reference subject"
+  }
+};
+
+function getStylePriorityCopy(value) {
+  return STYLE_PRIORITY_COPY[value] || STYLE_PRIORITY_COPY.balanced;
+}
+
 function buildPrompts() {
   const values = getFieldValues();
   const preset = getSelectedPreset();
   const p = preset.preset;
   const pJa = preset.presetJa || preset.preset;
+  const stylePriority = getStylePriorityCopy(values.stylePriority);
 
   const subjectEn = sentence(values.subject, "the main subject");
   const sceneEn = sentence(values.scene, "a production-ready visual scene");
@@ -268,6 +302,7 @@ function buildPrompts() {
     `Color palette: ${colorsEn}.`,
     `Mood and tone: ${moodEn}.`,
     `Style direction: ${p.style}.`,
+    `Style priority: ${stylePriority.en}`,
     `Texture and material feeling: ${p.texture}.`,
     `Must include: ${mustIncludeEn}.`,
     `Usage notes: ${usageNoteEn}.`,
@@ -283,17 +318,19 @@ function buildPrompts() {
     `色味: ${compactList([values.colors, pJa.colorPalette])}。`,
     `トンマナ: ${compactList([values.tone, pJa.mood])}。`,
     `スタイル方向性: ${pJa.style}。`,
+    `スタイル優先度: ${stylePriority.ja}`,
     `質感: ${pJa.texture}。`,
     `必ず入れたい要素: ${sentence(values.mustInclude, "主体が明確に見え、デザインで使いやすい余白がある")}。`,
     `用途メモ: ${sentence(values.notes, "LP、広告、Web、動画素材として使いやすい完成度")}。`,
     "商用デザインに使いやすく、主役が明確で、余白が整理されたビジュアルにする。"
   ].join("\n");
 
-  const negative = compactList([values.avoid, p.negative]);
+  const negative = compactList([values.avoid, p.negative, stylePriority.negative]);
 
   const settings = [
     `Aspect ratio: ${values.ratio || preset.recommendedSettings.aspectRatio}`,
     `Reference: ${preset.title}`,
+    `Style priority: ${stylePriority.en}`,
     `Reference usage: ${preset.recommendedSettings.referenceUse}`,
     `Variation advice: ${preset.recommendedSettings.variationAdvice}`,
     "If the generation tool supports seed values, keep the same seed for visual consistency across a series."

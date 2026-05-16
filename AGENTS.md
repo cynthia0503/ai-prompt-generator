@@ -220,10 +220,19 @@ Recommended fields:
 - Composition
 - Tone and manner
 - Color direction
+- Style priority
 - Must include
 - Prohibited elements
 - Output ratio
 - Extra notes
+
+Style priority should control how strongly the selected reference preset is used:
+
+- Balanced: use the preset as overall style direction.
+- Linework/coloring: prioritize expression method, brush touch, linework, and coloring; strengthen negative terms against photorealistic output.
+- Light/color only: use only color mood and lighting atmosphere.
+- Texture only: use only tactile surface feeling.
+- Composition only: use only layout logic.
 
 ## Copy Behavior
 
