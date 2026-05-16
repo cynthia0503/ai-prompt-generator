@@ -87,6 +87,35 @@
     }
   },
   {
+    "id": "delicate-girly-line-illustration-01",
+    "title": "繊細ガーリー線画",
+    "image": "images/sample/person-illustration.png",
+    "tags": ["イラスト", "人物", "清潔感", "パステル", "女性", "美容"],
+    "preset": {
+      "composition": "elegant character-focused illustration with a clean bust-up or half-body composition and soft negative space",
+      "lighting": "flat gentle illustration lighting with subtle blush-like shading and no harsh shadows",
+      "colorPalette": "soft pastel palette, pale pinks, warm skin tones, light beige, muted brown linework, low saturation",
+      "mood": "delicate, feminine, graceful, romantic, clean, beauty-oriented",
+      "texture": "fine hand-drawn linework, thin brown pencil-like strokes, soft watercolor-style coloring, translucent blush, lightly textured paper feeling",
+      "style": "Japanese girly beauty illustration with delicate manga-inspired line art and airy pastel coloring",
+      "negative": "thick black outlines, harsh cel shading, heavy contrast, realistic photo texture, messy brush strokes, over-saturated colors, distorted face, extra fingers, text, watermark"
+    },
+    "presetJa": {
+      "composition": "人物を上品に見せる、バストアップまたは半身中心の清潔な構図とやわらかな余白",
+      "lighting": "強い影を使わない、淡いチークのような陰影を中心にした穏やかなイラスト光",
+      "colorPalette": "淡いパステル、薄いピンク、温かい肌色、ライトベージュ、くすんだブラウンの線、低彩度",
+      "mood": "繊細、フェミニン、上品、ロマンチック、清潔感、美容感",
+      "texture": "細い手描き線、ブラウンの鉛筆風ライン、淡い水彩風の塗り、透けるようなチーク表現、軽い紙の質感",
+      "style": "繊細な少女漫画風の線画と、空気感のある淡いパステル塗りを活かした日本向け美容イラスト",
+      "negative": "太い黒線、強いアニメ塗り、強すぎるコントラスト、写真的な質感、雑な筆跡、彩度が高すぎる色、崩れた顔、余分な指、文字、透かし"
+    },
+    "recommendedSettings": {
+      "aspectRatio": "4:5",
+      "referenceUse": "Use this image as a linework and coloring reference for delicate illustration style, not as an exact character reference.",
+      "variationAdvice": "Keep fine brown linework, soft pastel coloring, and gentle watercolor-like shading consistent while changing the person, pose, or theme."
+    }
+  },
+  {
     "id": "saas-ad-01",
     "title": "Trust SaaS Ad",
     "image": "images/sample/saas-ad-01.svg",

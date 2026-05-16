@@ -111,8 +111,8 @@ Choose 3 to 6 tags.
 Use a mix of:
 
 - 表現形式 tags: `写真`, `イラスト`, `コラージュ`, `UI`, `3D文字`
-- 雰囲気・質感 tags: `透明感`, `高級感`, `POP`, `清潔感`, `パステル`, `フレア`, `ナチュラル`, `信頼感`, `余白`, `立体感`, `光沢`
-- 用途・構図 tags: `背景`, `人物`, `商品`, `文字`, `バナー`, `LP`, `LP素材`, `記事LP`, `Web`
+- 雰囲気・質感 tags: `透明感`, `高級感`, `POP`, `清潔感`, `パステル`, `フレア`, `ナチュラル`, `信頼感`, `余白`, `立体感`, `光沢`, `フェミニン`
+- 用途・構図 tags: `背景`, `人物`, `女性`, `商品`, `文字`, `バナー`, `LP`, `LP素材`, `記事LP`, `Web`
 - Domain tags when useful: `コスメ`, `SaaS`, `ウェルネス`, `食品`, `ファッション`, `医療`
 
 Prefer Japanese tags for user-facing filtering. If usage is unknown, use category/domain/style tags and one broad tag such as `Web` only when visually appropriate.

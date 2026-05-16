@@ -169,8 +169,8 @@ Tags are used for filtering. The UI supports selecting up to 3 tags at once. Mul
 Display tags under these top-level groups while keeping all child tags cross-selectable:
 
 - 表現形式: 写真 / イラスト / コラージュ / UI / 3D文字
-- 雰囲気・質感: 透明感 / 高級感 / POP / 清潔感 / パステル / フレア / ナチュラル / 信頼感 / 余白 / 立体感 / 光沢
-- 用途・構図: 背景 / 人物 / 商品 / 文字 / バナー / LP / LP素材 / 記事LP / Web
+- 雰囲気・質感: 透明感 / 高級感 / POP / 清潔感 / パステル / フレア / ナチュラル / 信頼感 / 余白 / 立体感 / 光沢 / フェミニン
+- 用途・構図: 背景 / 人物 / 女性 / 商品 / 文字 / バナー / LP / LP素材 / 記事LP / Web
 
 ## Gallery JSON Schema
 
