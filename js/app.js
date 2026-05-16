@@ -242,6 +242,81 @@ function sentence(value, fallback) {
   return value || fallback;
 }
 
+const ENGLISH_INPUT_REPLACEMENTS = [
+  ["花柄のワンピースを着用している若い日本女性", "a young Japanese woman wearing a floral dress"],
+  ["若い日本女性", "a young Japanese woman"],
+  ["日本女性", "Japanese woman"],
+  ["花柄のワンピース", "floral dress"],
+  ["ワンピース", "dress"],
+  ["青空", "blue sky"],
+  ["花畑", "flower field"],
+  ["細い道", "narrow path"],
+  ["歩いている", "walking"],
+  ["笑顔", "smiling expression"],
+  ["カメラ目線", "looking at the camera"],
+  ["風が髪を吹いて", "hair gently blowing in the wind"],
+  ["髪", "hair"],
+  ["花びら", "flower petals"],
+  ["舞い", "floating"],
+  ["淡いピンク", "pale pink"],
+  ["淡いパープル", "pale purple"],
+  ["淡い春の配色", "soft spring color palette"],
+  ["春", "spring"],
+  ["透明感", "translucent clarity"],
+  ["パステル", "pastel"],
+  ["フレア", "flare"],
+  ["薄ら", "subtle"],
+  ["人物", "person"],
+  ["左寄り", "left-aligned"],
+  ["左", "left side"],
+  ["右", "right side"],
+  ["余白", "negative space"],
+  ["コピー", "copy text"],
+  ["入れる", "place"],
+  ["可愛", "cute"],
+  ["可愛い", "cute"],
+  ["女性", "woman"],
+  ["表情", "facial expression"],
+  ["はっきり見える", "clearly visible"],
+  ["手描き風", "hand-drawn style"],
+  ["イラスト", "illustration"],
+  ["筆触", "brush touch"],
+  ["上色方式", "coloring method"],
+  ["線画", "line art"],
+  ["構図", "composition"],
+  ["質感", "texture"],
+  ["背景", "background"],
+  ["文字", "text"],
+  ["ロゴ", "logo"],
+  ["透かし", "watermark"],
+  ["手", "hands"],
+  ["散らかった背景", "cluttered background"],
+  ["高級感", "premium feeling"],
+  ["清潔感", "clean feeling"],
+  ["信頼感", "trustworthy feeling"],
+  ["人物は", "the person is "],
+  ["テキスト", "text"],
+  ["を入れてください", " should be included"],
+  ["「", "\""],
+  ["」", "\""],
+  ["、", ", "],
+  ["。", ". "],
+  ["\n", " "]
+];
+
+function translateInputToEnglish(value) {
+  if (!value) return "";
+  let translated = value;
+  ENGLISH_INPUT_REPLACEMENTS.forEach(([from, to]) => {
+    translated = translated.split(from).join(to);
+  });
+  return translated
+    .replace(/\s+/g, " ")
+    .replace(/\s+,/g, ",")
+    .replace(/,\s*,/g, ",")
+    .trim();
+}
+
 function getSelectedPreset() {
   return state.gallery.find((item) => item.id === state.selectedPresetId) || state.gallery[0];
 }
@@ -285,13 +360,13 @@ function buildPrompts() {
   const pJa = preset.presetJa || preset.preset;
   const stylePriority = getStylePriorityCopy(values.stylePriority);
 
-  const subjectEn = sentence(values.subject, "the main subject");
-  const sceneEn = sentence(values.scene, "a production-ready visual scene");
-  const compositionEn = compactList([values.composition, p.composition]);
-  const colorsEn = compactList([values.colors, p.colorPalette]);
-  const moodEn = compactList([values.tone, p.mood]);
-  const mustIncludeEn = sentence(values.mustInclude, "clear subject visibility and enough whitespace for design use");
-  const usageNoteEn = sentence(values.notes, "ready to use in LP, advertising, web, or video asset production");
+  const subjectEn = sentence(translateInputToEnglish(values.subject), "the main subject");
+  const sceneEn = sentence(translateInputToEnglish(values.scene), "a production-ready visual scene");
+  const compositionEn = compactList([translateInputToEnglish(values.composition), p.composition]);
+  const colorsEn = compactList([translateInputToEnglish(values.colors), p.colorPalette]);
+  const moodEn = compactList([translateInputToEnglish(values.tone), p.mood]);
+  const mustIncludeEn = sentence(translateInputToEnglish(values.mustInclude), "clear subject visibility and enough whitespace for design use");
+  const usageNoteEn = sentence(translateInputToEnglish(values.notes), "ready to use in LP, advertising, web, or video asset production");
 
   const english = [
     `Purpose: Create a ${values.usage}.`,
@@ -325,7 +400,7 @@ function buildPrompts() {
     "商用デザインに使いやすく、主役が明確で、余白が整理されたビジュアルにする。"
   ].join("\n");
 
-  const negative = compactList([values.avoid, p.negative, stylePriority.negative]);
+  const negative = compactList([translateInputToEnglish(values.avoid), p.negative, stylePriority.negative]);
 
   const settings = [
     `Aspect ratio: ${values.ratio || preset.recommendedSettings.aspectRatio}`,

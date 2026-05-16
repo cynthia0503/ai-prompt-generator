@@ -145,6 +145,8 @@ Always produce:
 - Negative Prompt
 - Recommended Settings
 
+English Prompt should avoid leaving Japanese user input as-is. Because this is a static local MVP without translation APIs, use the local replacement dictionary in `js/app.js` for common Japanese design terms. Japanese Prompt should preserve the user's original wording.
+
 The generated prompt should include both user inputs and selected preset values. User inputs should remain visible and should not be silently overwritten by the preset.
 
 ## Reference Preset Concept
