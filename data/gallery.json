@@ -116,6 +116,122 @@
     }
   },
   {
+    "id": "airy-bubble-pop-photo-01",
+    "title": "エアリーバブルPOP",
+    "image": "images/sample/sample-1.png",
+    "tags": ["写真", "透明感", "POP", "人物", "バナー", "水色"],
+    "preset": {
+      "composition": "playful editorial layout with a person framed by large translucent bubbles, floating type-like elements, and generous airy spacing",
+      "lighting": "bright diffused studio light with soft reflections, pale blue glow, and transparent bubble highlights",
+      "colorPalette": "pale blue, white, soft cyan, airy cool tones",
+      "mood": "fresh, playful, clean, buoyant, transparent",
+      "texture": "soap bubble transparency, glossy reflections, light refraction, soft plastic-like floating elements",
+      "style": "Japanese pop editorial photo visual with airy bubbles and translucent freshness",
+      "negative": "dark heavy mood, muddy colors, hard shadows, cluttered layout, overly realistic product packshot, unreadable tiny text, watermark"
+    },
+    "presetJa": {
+      "composition": "人物を大きな透明バブルで囲み、浮遊感のある文字要素と広い余白を使ったポップなエディトリアル構図",
+      "lighting": "明るく拡散したスタジオ光、柔らかな反射、淡い水色の発光感、透明な泡のハイライト",
+      "colorPalette": "淡い水色、白、ソフトシアン、軽やかな寒色トーン",
+      "mood": "フレッシュ、遊び心、清潔感、浮遊感、透明感",
+      "texture": "シャボン玉の透明感、光沢反射、光の屈折、柔らかい樹脂のような浮遊パーツ",
+      "style": "透明感のある泡と軽やかな水色トーンを活かした、日本向けPOPエディトリアル写真ビジュアル",
+      "negative": "暗く重い雰囲気、濁った色、強い影、散らかったレイアウト、過度な商品写真感、読めない小さな文字、透かし"
+    },
+    "recommendedSettings": {
+      "aspectRatio": "4:5",
+      "referenceUse": "Use this image as a bubble transparency and playful airy layout reference.",
+      "variationAdvice": "Keep the pale blue freshness, floating bubble texture, and playful editorial spacing consistent while changing the subject."
+    }
+  },
+  {
+    "id": "soft-botanical-pastel-pattern-01",
+    "title": "淡色ボタニカル背景",
+    "image": "images/sample/sample-2.png",
+    "tags": ["イラスト", "背景", "パステル", "ナチュラル", "花", "余白"],
+    "preset": {
+      "composition": "seamless botanical background pattern with scattered delicate flowers, thin stems, and balanced open spacing",
+      "lighting": "soft matte lighting with gentle depth and no harsh shadows",
+      "colorPalette": "warm off-white, dusty pink, muted lavender, sage green, soft beige",
+      "mood": "gentle, natural, romantic, calm, delicate",
+      "texture": "soft watercolor petals, lightly raised floral details, fine botanical linework, paper-like matte surface",
+      "style": "delicate pastel botanical illustration background suitable for LP sections, packaging, and feminine web visuals",
+      "negative": "strong contrast, saturated neon color, dense clutter, hard vector edges, photorealistic flowers, dark background, text, watermark"
+    },
+    "presetJa": {
+      "composition": "繊細な花、細い茎、ほどよい余白を散らしたシームレス風のボタニカル背景構図",
+      "lighting": "強い影を使わない、柔らかくマットな光と控えめな奥行き",
+      "colorPalette": "温かいオフホワイト、くすみピンク、淡いラベンダー、セージグリーン、ソフトベージュ",
+      "mood": "やさしい、ナチュラル、ロマンチック、穏やか、繊細",
+      "texture": "淡い水彩の花びら、少し浮き上がった花のディテール、細い植物線画、紙のようなマット感",
+      "style": "LP背景、パッケージ、女性向けWeb素材に使いやすい淡色ボタニカルイラスト背景",
+      "negative": "強すぎるコントラスト、鮮やかすぎるネオン色、密集しすぎた装飾、硬いベクター感、写実的すぎる花、暗い背景、文字、透かし"
+    },
+    "recommendedSettings": {
+      "aspectRatio": "9:16",
+      "referenceUse": "Use this image as a pastel botanical background and delicate floral texture reference.",
+      "variationAdvice": "Keep the soft botanical spacing, muted pastel palette, and paper-like floral texture consistent across background variations."
+    }
+  },
+  {
+    "id": "watercolor-blue-bird-elements-01",
+    "title": "水彩ブルーバード素材",
+    "image": "images/sample/sample-3.png",
+    "tags": ["イラスト", "ナチュラル", "清潔感", "水彩", "素材", "動物"],
+    "preset": {
+      "composition": "small standalone illustration elements arranged with clean spacing, suitable as decorative assets or sticker-like motifs",
+      "lighting": "flat soft illustration lighting with gentle watercolor gradients and no harsh shadows",
+      "colorPalette": "dusty blue, soft teal, cream, warm beige, muted coral accents",
+      "mood": "gentle, friendly, natural, handmade, clean",
+      "texture": "soft watercolor wash, visible brush grain, dry-paper texture, delicate feather strokes",
+      "style": "hand-painted watercolor animal illustration elements with clean commercial asset usability",
+      "negative": "photorealistic bird, hard vector outline, saturated primary colors, heavy black linework, cluttered background, text, watermark"
+    },
+    "presetJa": {
+      "composition": "装飾素材やステッカー風モチーフとして使いやすい、余白を持った小さな単体イラスト配置",
+      "lighting": "強い影のないフラットで柔らかなイラスト光、水彩の穏やかなグラデーション",
+      "colorPalette": "くすみブルー、ソフトティール、クリーム、温かいベージュ、控えめなコーラル差し色",
+      "mood": "やさしい、親しみやすい、ナチュラル、手描き感、清潔感",
+      "texture": "柔らかな水彩のにじみ、筆の粒感、乾いた紙の質感、繊細な羽のタッチ",
+      "style": "商用素材として使いやすい、手描き水彩の動物イラストパーツ",
+      "negative": "写実的な鳥、硬いベクター線、彩度の高い原色、太い黒線、散らかった背景、文字、透かし"
+    },
+    "recommendedSettings": {
+      "aspectRatio": "1:1",
+      "referenceUse": "Use this image as a watercolor brush and small decorative element reference.",
+      "variationAdvice": "Keep the watercolor paper texture, dusty blue palette, and friendly rounded animal shapes consistent when changing motifs."
+    }
+  },
+  {
+    "id": "clear-gel-glow-photo-01",
+    "title": "透明ジェル光沢",
+    "image": "images/sample/sample-4.png",
+    "tags": ["写真", "透明感", "光沢", "コスメ", "商品", "高級感"],
+    "preset": {
+      "composition": "minimal close-up composition with translucent gel spheres or glossy liquid forms placed on a clean gradient background",
+      "lighting": "bright cosmetic studio lighting with sharp glossy highlights, soft refraction, and luminous edge glow",
+      "colorPalette": "clear blue, pale pink, white highlights, cool luxury gradient",
+      "mood": "clean, premium, fresh, transparent, luminous",
+      "texture": "clear gel, glossy liquid surface, glass-like refraction, smooth wet highlights, skincare serum texture",
+      "style": "premium cosmetic macro photo visual focused on transparent gel gloss and luminous freshness",
+      "negative": "muddy liquid, dull matte surface, cluttered props, harsh dark shadows, rough texture, dirty background, unreadable text, watermark"
+    },
+    "presetJa": {
+      "composition": "透明なジェル球や光沢のある液体形状を、清潔なグラデーション背景に置いたミニマルな接写構図",
+      "lighting": "鋭い光沢ハイライト、柔らかな屈折、発光するエッジを持つ明るいコスメ系スタジオ光",
+      "colorPalette": "クリアブルー、淡いピンク、白いハイライト、クールで高級感のあるグラデーション",
+      "mood": "清潔感、高級感、フレッシュ、透明感、発光感",
+      "texture": "透明ジェル、光沢のある液体表面、ガラスのような屈折、なめらかな濡れたハイライト、美容液の質感",
+      "style": "透明ジェルの光沢とみずみずしい発光感にフォーカスした、高級コスメ向けマクロ写真ビジュアル",
+      "negative": "濁った液体、鈍いマット面、散らかった小物、暗く強い影、粗い質感、汚れた背景、読めない文字、透かし"
+    },
+    "recommendedSettings": {
+      "aspectRatio": "4:3",
+      "referenceUse": "Use this image as a transparent gel gloss and cosmetic macro lighting reference.",
+      "variationAdvice": "Keep the glossy gel refraction, clean gradient background, and premium cosmetic lighting consistent while changing the product or shape."
+    }
+  },
+  {
     "id": "saas-ad-01",
     "title": "Trust SaaS Ad",
     "image": "images/sample/saas-ad-01.svg",
