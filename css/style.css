@@ -303,6 +303,11 @@ textarea:focus {
   box-shadow: 0 0 0 3px rgba(138, 167, 204, 0.22);
 }
 
+.preset-card.is-background {
+  border-color: #c79a4b;
+  box-shadow: 0 0 0 3px rgba(199, 154, 75, 0.22);
+}
+
 .preset-card img {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -343,7 +348,7 @@ textarea:focus {
 
 .preset-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 6px;
 }
 
@@ -365,6 +370,11 @@ textarea:focus {
 .primary-action {
   background: var(--accent-soft);
   color: var(--accent-dark);
+}
+
+.background-action {
+  background: #fbf1df;
+  color: #785213;
 }
 
 .output-panel {
