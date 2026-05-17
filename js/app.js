@@ -363,6 +363,25 @@ function sentence(value, fallback) {
 }
 
 const ENGLISH_INPUT_REPLACEMENTS = [
+  ["美容広告バナー", "beauty advertising banner"],
+  ["美容広告", "beauty advertisement"],
+  ["採用LPのFV", "first-view hero visual for a recruiting landing page"],
+  ["採用LP", "recruiting landing page"],
+  ["Instagram広告", "Instagram advertisement"],
+  ["インスタ広告", "Instagram advertisement"],
+  ["広告バナー", "advertising banner"],
+  ["LPヒーロー", "landing page hero visual"],
+  ["LP素材", "landing page asset"],
+  ["記事LP", "article landing page"],
+  ["Webセクション", "web section"],
+  ["動画素材", "video asset"],
+  ["SNS広告", "social media advertisement"],
+  ["美容", "beauty"],
+  ["広告", "advertising"],
+  ["バナー", "banner"],
+  ["採用", "recruiting"],
+  ["ファーストビュー", "first-view hero visual"],
+  ["FV", "first-view hero visual"],
   ["花柄のワンピースを着用している若い日本女性", "a young Japanese woman wearing a floral dress"],
   ["若い日本女性", "a young Japanese woman"],
   ["日本女性", "Japanese woman"],
@@ -492,6 +511,7 @@ function buildPrompts() {
   const pJa = preset.presetJa || preset.preset;
   const stylePriority = getStylePriorityCopy(values.stylePriority);
 
+  const usageEn = sentence(translateInputToEnglish(values.usage), "production-ready visual asset");
   const subjectEn = sentence(translateInputToEnglish(values.subject), "the main subject");
   const sceneEn = sentence(translateInputToEnglish(values.scene), "a production-ready visual scene");
   const compositionEn = compactList([translateInputToEnglish(values.composition), p.composition]);
@@ -514,7 +534,7 @@ function buildPrompts() {
     : "";
 
   const english = [
-    `Purpose: Create a ${values.usage}.`,
+    `Purpose: Create a ${usageEn}.`,
     `Output format: ${values.outputFormat}.`,
     `Subject: ${subjectEn}.`,
     `Scene: ${sceneEn}.`,
@@ -534,7 +554,7 @@ function buildPrompts() {
   ].join("\n");
 
   const japanese = [
-    `用途: ${toJapaneseUsage(values.usage)}向けの画像生成プロンプト。`,
+    `用途: ${sentence(values.usage, "素材制作")}向けの画像生成プロンプト。`,
     `出力表現形式: ${toJapaneseOutputFormat(values.outputFormat)}。`,
     `主体: ${sentence(values.subject, "主役となる被写体")}。`,
     `場景: ${sentence(values.scene, "素材制作に使いやすいビジュアルシーン")}。`,
@@ -572,18 +592,6 @@ function buildPrompts() {
   els.japaneseOutput.value = japanese.split("\n").filter(Boolean).join("\n");
   els.negativeOutput.value = negative;
   els.settingsOutput.value = settings;
-}
-
-function toJapaneseUsage(value) {
-  const map = {
-    "LP hero visual": "LPヒーロー",
-    "advertising banner visual": "広告バナー",
-    "article LP key visual": "記事LP",
-    "web section background visual": "Webセクション",
-    "video thumbnail or background asset": "動画素材",
-    "social media advertising visual": "SNS広告"
-  };
-  return map[value] || value;
 }
 
 function toJapaneseOutputFormat(value) {

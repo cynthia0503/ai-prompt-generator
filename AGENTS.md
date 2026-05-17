@@ -240,6 +240,8 @@ Style priority should control how strongly the selected reference preset is used
 - Texture only: use only tactile surface feeling.
 - Composition only: use only layout logic.
 
+Asset usage is a free-text field, not a fixed select. Preserve the user's concrete wording in Japanese output and run the English output through the local replacement dictionary.
+
 ## Copy Behavior
 
 Provide separate copy buttons:
