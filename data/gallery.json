@@ -92,27 +92,27 @@
     "image": "images/sample/person-illustration.png",
     "tags": ["人物", "手描き感", "パステル", "フェミニン", "美容"],
     "preset": {
-      "composition": "elegant character-focused illustration with a clean bust-up or half-body composition and soft negative space",
-      "lighting": "flat gentle illustration lighting with subtle blush-like shading and no harsh shadows",
-      "colorPalette": "soft pastel palette, pale pinks, warm skin tones, light beige, muted brown linework, low saturation",
-      "mood": "delicate, feminine, graceful, romantic, clean, beauty-oriented",
-      "texture": "fine hand-drawn linework, thin brown pencil-like strokes, soft watercolor-style coloring, translucent blush, lightly textured paper feeling",
-      "style": "Japanese girly beauty illustration with delicate manga-inspired line art and airy pastel coloring",
-      "negative": "thick black outlines, harsh cel shading, heavy contrast, realistic photo texture, messy brush strokes, over-saturated colors, distorted face, extra fingers, text, watermark"
+      "composition": "ornamental girly beauty portrait illustration, bust-up composition with graceful pose, decorative feminine details such as ribbon, frills, mirror, makeup gesture, and carefully drawn hair strands",
+      "lighting": "soft cosmetic illustration lighting with pale blush shading, gentle highlights around eyes and lips, no hard shadows",
+      "colorPalette": "powder pink, pale rose, ivory, warm skin tones, light beige, soft brown linework, low saturation pastel accents",
+      "mood": "delicate, romantic, girly, elegant, beauty-focused, graceful, softly glamorous",
+      "texture": "very fine manga-inspired hair linework, thin warm-brown pencil strokes, soft watercolor blush, translucent pastel wash, subtle paper grain, delicate cosmetic sheen on lips and eyes",
+      "style": "Japanese shoujo-manga-inspired beauty illustration with ornate feminine detail, fine hair strands, soft watercolor coloring, and romantic pastel atmosphere",
+      "negative": "minimal flat lifestyle illustration, simple block coloring, plain white background only, sparse detail, casual sweatshirt, side-profile-only pose, thick black outlines, harsh cel shading, photorealistic skin, 3D render, text, watermark"
     },
     "presetJa": {
-      "composition": "人物を上品に見せる、バストアップまたは半身中心の清潔な構図とやわらかな余白",
-      "lighting": "強い影を使わない、淡いチークのような陰影を中心にした穏やかなイラスト光",
-      "colorPalette": "淡いパステル、薄いピンク、温かい肌色、ライトベージュ、くすんだブラウンの線、低彩度",
-      "mood": "繊細、フェミニン、上品、ロマンチック、清潔感、美容感",
-      "texture": "細い手描き線、ブラウンの鉛筆風ライン、淡い水彩風の塗り、透けるようなチーク表現、軽い紙の質感",
-      "style": "繊細な少女漫画風の線画と、空気感のある淡いパステル塗りを活かした日本向け美容イラスト",
-      "negative": "太い黒線、強いアニメ塗り、強すぎるコントラスト、写真的な質感、雑な筆跡、彩度が高すぎる色、崩れた顔、余分な指、文字、透かし"
+      "composition": "リボン、フリル、鏡、メイク仕草、丁寧に描いた髪の束感など、装飾的でガーリーな美容ポートレート構図",
+      "lighting": "目元や唇にやさしいハイライトを入れ、淡いチークのような陰影で見せる柔らかな美容イラスト光",
+      "colorPalette": "パウダーピンク、淡いローズ、アイボリー、温かい肌色、ライトベージュ、柔らかなブラウン線、低彩度のパステル差し色",
+      "mood": "繊細、ロマンチック、ガーリー、上品、美容感、優雅、柔らかな華やかさ",
+      "texture": "少女漫画風の細かな髪の線、細い温かいブラウンの鉛筆線、淡い水彩チーク、透けるようなパステル塗り、軽い紙の粒感、目元と唇の繊細な艶",
+      "style": "細かな髪の描き込み、装飾的なフェミニン要素、淡い水彩塗り、ロマンチックなパステル感を持つ日本向け少女漫画風美容イラスト",
+      "negative": "ミニマルなフラット人物イラスト、単純なベタ塗り、白背景だけのシンプル構成、描き込みの少ない線画、カジュアルなスウェット、横顔だけのポーズ、太い黒線、強いアニメ塗り、写実的な肌、3D感、文字、透かし"
     },
     "recommendedSettings": {
       "aspectRatio": "4:5",
-      "referenceUse": "Use this image as a linework and coloring reference for delicate illustration style, not as an exact character reference.",
-      "variationAdvice": "Keep fine brown linework, soft pastel coloring, and gentle watercolor-like shading consistent while changing the person, pose, or theme."
+      "referenceUse": "Use this image as a shoujo beauty illustration reference for ornate feminine linework, hair detail, watercolor blush, and pastel cosmetic coloring.",
+      "variationAdvice": "Keep the romantic girly beauty mood, fine hair strands, soft watercolor blush, and decorative feminine details distinct from minimal flat line illustration."
     }
   },
   {
@@ -121,27 +121,27 @@
     "image": "images/sample/sample-5.png",
     "tags": ["人物", "手描き感", "ミニマル", "余白多め", "フェミニン"],
     "preset": {
-      "composition": "simple character-focused portrait or bust-up composition with clean whitespace and a calm side-profile feeling",
-      "lighting": "flat illustration lighting with almost no shadow, relying on linework and simple color blocks",
-      "colorPalette": "warm brown linework, soft beige skin tone, muted orange accent, clean white background",
-      "mood": "minimal, calm, feminine, thoughtful, clean",
-      "texture": "thin brown hand-drawn line art, smooth flat coloring, sparse detail, clean digital illustration surface",
-      "style": "minimal Japanese lifestyle character illustration with warm brown linework and restrained flat coloring",
-      "negative": "photorealistic skin, heavy shading, thick black outline, complex background, overly detailed rendering, 3D look, watermark, stock watermark, text"
+      "composition": "minimal lifestyle character portrait, calm side-profile or three-quarter profile, simple bust-up framing, large clean white negative space, no decorative background",
+      "lighting": "flat clean illustration lighting with almost no shadow or blush, using linework and simple flat color blocks only",
+      "colorPalette": "warm dark-brown linework, off-white skin area, muted terracotta or orange clothing accent, plain white background, very limited palette",
+      "mood": "minimal, calm, modern, thoughtful, quiet, clean lifestyle",
+      "texture": "thin warm-brown contour lines, sparse hair strokes, smooth flat fill, no watercolor bleed, no paper grain emphasis, clean digital editorial illustration surface",
+      "style": "minimal Japanese lifestyle line illustration with side-profile pose, restrained flat coloring, sparse detail, and clean white editorial whitespace",
+      "negative": "shoujo manga beauty illustration, ornate feminine decoration, ribbons, frills, mirror, makeup gesture, detailed eyelashes, detailed hair strands, watercolor blush, pastel cosmetic glow, complex background, photorealistic skin, 3D look, watermark, stock watermark, text"
     },
     "presetJa": {
-      "composition": "清潔な余白を活かした、横顔やバストアップ中心のシンプルな人物構図",
-      "lighting": "影をほとんど使わず、線画とシンプルな色面で見せるフラットなイラスト光",
-      "colorPalette": "温かいブラウンの線、柔らかな肌色、くすんだオレンジの差し色、白背景",
-      "mood": "ミニマル、穏やか、フェミニン、思慮深い、清潔感",
-      "texture": "細いブラウンの手描き線、なめらかなフラット塗り、少ないディテール、清潔なデジタルイラスト面",
-      "style": "温かいブラウン線画と控えめなフラット塗りを活かした、日本向けミニマル人物ライフスタイルイラスト",
-      "negative": "写実的な肌、強い陰影、太い黒線、複雑な背景、描き込みすぎ、3D感、透かし、ストック透かし、文字"
+      "composition": "横顔または斜め横顔の落ち着いた人物ポートレート、バストアップのシンプル構図、大きな白い余白、装飾背景なし",
+      "lighting": "チークや強い陰影をほとんど使わず、線と単純な色面だけで見せる清潔なフラット光",
+      "colorPalette": "温かいダークブラウン線、オフホワイトの肌面、くすみテラコッタやオレンジ系の服の差し色、白背景、非常に少ない配色",
+      "mood": "ミニマル、穏やか、現代的、思慮深い、静か、清潔なライフスタイル感",
+      "texture": "細い温かいブラウンの輪郭線、少ない髪の線、なめらかなフラット塗り、水彩のにじみなし、紙粒感を強調しない、清潔なデジタル編集イラスト面",
+      "style": "横顔ポーズ、控えめなフラット塗り、少ない描き込み、白い編集的余白を活かした日本向けミニマル人物線画",
+      "negative": "少女漫画風の美容イラスト、装飾的なフェミニン要素、リボン、フリル、鏡、メイク仕草、細かいまつ毛、描き込まれた髪束、水彩チーク、パステルの美容感、複雑な背景、写実的な肌、3D感、透かし、ストック透かし、文字"
     },
     "recommendedSettings": {
       "aspectRatio": "4:5",
-      "referenceUse": "Use this image as a minimal warm-brown linework and flat coloring reference for simple character illustration.",
-      "variationAdvice": "Keep the warm brown line art, clean whitespace, and restrained flat color blocks consistent while changing the person, pose, or theme."
+      "referenceUse": "Use this image as a minimal lifestyle line illustration reference for warm-brown contour lines, flat color blocks, and clean white negative space.",
+      "variationAdvice": "Keep the side-profile calmness, sparse detail, flat coloring, and white editorial whitespace distinct from ornate shoujo beauty illustration."
     }
   },
   {
