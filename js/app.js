@@ -119,7 +119,7 @@ const FALLBACK_GALLERY = [
     id: "airy-bubble-pop-photo-01",
     title: "エアリーバブルPOP",
     image: "images/sample/sample-1.png",
-    tags: ["写真", "透明感", "POP", "人物", "バナー", "水色"],
+    tags: ["写真", "透明感", "POP", "バナー", "水色"],
     preset: {
       composition: "playful editorial layout with a person framed by large translucent bubbles, floating type-like elements, and generous airy spacing",
       lighting: "bright diffused studio light with soft reflections, pale blue glow, and transparent bubble highlights",
