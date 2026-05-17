@@ -3,7 +3,7 @@ const FALLBACK_GALLERY = [
     id: "clean-lp-hero-01",
     title: "Clean LP Hero",
     image: "images/sample/clean-lp-hero-01.svg",
-    tags: ["LP", "商品", "コスメ", "清潔感", "高級感", "余白"],
+    tags: ["商品", "清潔感", "高級感", "余白多め"],
     preset: {
       composition: "centered product composition with generous whitespace for copy placement",
       lighting: "soft natural morning light, low contrast, gentle shadows",
@@ -32,7 +32,7 @@ const FALLBACK_GALLERY = [
     id: "pastel-translucent-flare-01",
     title: "パステル透明感フレア",
     image: "images/sample/pastel-translucent-flare-01.jpg",
-    tags: ["商品", "コスメ", "パステル", "透明感", "フレア", "高級感"],
+    tags: ["商品", "透明感", "パステル", "フレア", "光沢"],
     preset: {
       composition: "soft close-up product composition with layered translucent objects and gentle diagonal movement",
       lighting: "bright diffused light with pastel lens flares, pearlescent highlights, soft glow, low contrast",
@@ -61,7 +61,7 @@ const FALLBACK_GALLERY = [
     id: "puffy-3d-text-texture-01",
     title: "ぷっくり3D文字質感",
     image: "images/sample/txt-3d.png",
-    tags: ["3D文字", "文字", "POP", "立体感", "光沢", "バナー"],
+    tags: ["文字", "3D質感", "POP", "立体感", "光沢"],
     preset: {
       composition: "large centered typographic composition with thick rounded 3D lettering and clear readable character shapes",
       lighting: "soft studio lighting with bright specular highlights, subtle rim glow, and gentle cast shadows that enhance depth",
@@ -90,7 +90,7 @@ const FALLBACK_GALLERY = [
     id: "delicate-girly-line-illustration-01",
     title: "繊細ガーリー線画",
     image: "images/sample/person-illustration.png",
-    tags: ["イラスト", "人物", "清潔感", "パステル", "女性", "美容"],
+    tags: ["人物", "手描き感", "パステル", "フェミニン", "美容"],
     preset: {
       composition: "elegant character-focused illustration with a clean bust-up or half-body composition and soft negative space",
       lighting: "flat gentle illustration lighting with subtle blush-like shading and no harsh shadows",
@@ -119,7 +119,7 @@ const FALLBACK_GALLERY = [
     id: "airy-bubble-pop-photo-01",
     title: "エアリーバブルPOP",
     image: "images/sample/sample-1.png",
-    tags: ["写真", "透明感", "POP", "バナー", "水色"],
+    tags: ["人物", "透明感", "POP", "水色", "浮遊感"],
     preset: {
       composition: "playful editorial layout with a person framed by large translucent bubbles, floating type-like elements, and generous airy spacing",
       lighting: "bright diffused studio light with soft reflections, pale blue glow, and transparent bubble highlights",
@@ -148,7 +148,7 @@ const FALLBACK_GALLERY = [
     id: "soft-botanical-pastel-pattern-01",
     title: "淡色ボタニカル背景",
     image: "images/sample/sample-2.png",
-    tags: ["イラスト", "背景", "パステル", "ナチュラル", "花", "余白"],
+    tags: ["背景", "パターン", "パステル", "ナチュラル", "ボタニカル", "余白多め"],
     preset: {
       composition: "seamless botanical background pattern with scattered delicate flowers, thin stems, and balanced open spacing",
       lighting: "soft matte lighting with gentle depth and no harsh shadows",
@@ -177,7 +177,7 @@ const FALLBACK_GALLERY = [
     id: "watercolor-blue-bird-elements-01",
     title: "水彩ブルーバード素材",
     image: "images/sample/sample-3.png",
-    tags: ["イラスト", "ナチュラル", "清潔感", "水彩", "素材", "動物"],
+    tags: ["装飾素材", "動物", "水彩", "ナチュラル", "清潔感"],
     preset: {
       composition: "small standalone illustration elements arranged with clean spacing, suitable as decorative assets or sticker-like motifs",
       lighting: "flat soft illustration lighting with gentle watercolor gradients and no harsh shadows",
@@ -206,7 +206,7 @@ const FALLBACK_GALLERY = [
     id: "clear-gel-glow-photo-01",
     title: "透明ジェル光沢",
     image: "images/sample/sample-4.png",
-    tags: ["写真", "透明感", "光沢", "コスメ", "商品", "高級感"],
+    tags: ["商品", "透明感", "光沢", "高級感", "グラデーション"],
     preset: {
       composition: "minimal close-up composition with translucent gel spheres or glossy liquid forms placed on a clean gradient background",
       lighting: "bright cosmetic studio lighting with sharp glossy highlights, soft refraction, and luminous edge glow",
@@ -235,7 +235,7 @@ const FALLBACK_GALLERY = [
     id: "saas-ad-01",
     title: "Trust SaaS Ad",
     image: "images/sample/saas-ad-01.svg",
-    tags: ["BtoB", "SaaS", "UI", "Web", "信頼感", "背景"],
+    tags: ["UI", "背景", "信頼感", "ミニマル"],
     preset: {
       composition: "clean dashboard-inspired composition with clear focal area and organized spacing",
       lighting: "even studio lighting, soft highlights, no dramatic shadows",
@@ -264,7 +264,7 @@ const FALLBACK_GALLERY = [
     id: "natural-wellness-01",
     title: "Natural Wellness",
     image: "images/sample/natural-wellness-01.svg",
-    tags: ["記事LP", "商品", "ウェルネス", "ナチュラル", "背景"],
+    tags: ["商品", "背景", "ナチュラル", "マット", "ボタニカル"],
     preset: {
       composition: "soft lifestyle composition with natural props and moderate whitespace",
       lighting: "warm diffused daylight, gentle highlights, natural shadows",
@@ -304,16 +304,16 @@ const MAX_SECONDARY_PRESETS = 2;
 
 const TAG_GROUPS = [
   {
-    label: "表現形式",
-    tags: ["写真", "イラスト", "コラージュ", "UI", "3D文字"]
+    label: "参考主要素",
+    tags: ["人物", "商品", "文字", "背景", "装飾素材", "パターン", "UI", "動物"]
   },
   {
     label: "雰囲気・質感",
-    tags: ["透明感", "高級感", "POP", "清潔感", "パステル", "フレア", "ナチュラル", "信頼感", "余白", "立体感", "光沢", "フェミニン"]
+    tags: ["透明感", "高級感", "清潔感", "POP", "ナチュラル", "光沢", "マット", "手描き感", "水彩", "パステル", "フレア", "立体感", "3D質感", "フェミニン", "信頼感", "ミニマル"]
   },
   {
-    label: "用途・構図",
-    tags: ["背景", "人物", "女性", "商品", "文字", "バナー", "LP", "LP素材", "記事LP", "Web"]
+    label: "背景・空間",
+    tags: ["青空", "花畑", "室内", "グラデーション", "ボタニカル", "余白多め", "奥行き", "光の差し込み", "水色", "浮遊感"]
   }
 ];
 
@@ -335,6 +335,7 @@ const els = {
 
 const fieldIds = [
   "usage",
+  "outputFormat",
   "subject",
   "scene",
   "composition",
@@ -514,6 +515,7 @@ function buildPrompts() {
 
   const english = [
     `Purpose: Create a ${values.usage}.`,
+    `Output format: ${values.outputFormat}.`,
     `Subject: ${subjectEn}.`,
     `Scene: ${sceneEn}.`,
     `Composition: ${compositionEn}.`,
@@ -533,6 +535,7 @@ function buildPrompts() {
 
   const japanese = [
     `用途: ${toJapaneseUsage(values.usage)}向けの画像生成プロンプト。`,
+    `出力表現形式: ${toJapaneseOutputFormat(values.outputFormat)}。`,
     `主体: ${sentence(values.subject, "主役となる被写体")}。`,
     `場景: ${sentence(values.scene, "素材制作に使いやすいビジュアルシーン")}。`,
     `構図: ${compactList([values.composition, pJa.composition])}。`,
@@ -579,6 +582,17 @@ function toJapaneseUsage(value) {
     "web section background visual": "Webセクション",
     "video thumbnail or background asset": "動画素材",
     "social media advertising visual": "SNS広告"
+  };
+  return map[value] || value;
+}
+
+function toJapaneseOutputFormat(value) {
+  const map = {
+    photo: "写真",
+    illustration: "イラスト",
+    "3D visual": "3D",
+    collage: "コラージュ",
+    typography: "タイポグラフィ"
   };
   return map[value] || value;
 }

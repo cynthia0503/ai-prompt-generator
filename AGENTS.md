@@ -170,11 +170,13 @@ Each gallery item should define stable creative controls:
 
 Tags are used for filtering. The UI supports selecting up to 3 tags at once. Multiple selected tags should show presets that include at least one selected tag.
 
-Display tags under these top-level groups while keeping all child tags cross-selectable:
+Display reference search tags under these top-level groups while keeping all child tags cross-selectable:
 
-- 表現形式: 写真 / イラスト / コラージュ / UI / 3D文字
-- 雰囲気・質感: 透明感 / 高級感 / POP / 清潔感 / パステル / フレア / ナチュラル / 信頼感 / 余白 / 立体感 / 光沢 / フェミニン
-- 用途・構図: 背景 / 人物 / 女性 / 商品 / 文字 / バナー / LP / LP素材 / 記事LP / Web
+- 参考主要素: 人物 / 商品 / 文字 / 背景 / 装飾素材 / パターン / UI / 動物
+- 雰囲気・質感: 透明感 / 高級感 / 清潔感 / POP / ナチュラル / 光沢 / マット / 手描き感 / 水彩 / パステル / フレア / 立体感 / 3D質感 / フェミニン / 信頼感 / ミニマル
+- 背景・空間: 青空 / 花畑 / 室内 / グラデーション / ボタニカル / 余白多め / 奥行き / 光の差し込み / 水色 / 浮遊感
+
+Do not use usage/layout tags such as LP, banner, article LP, left aligned, centered, or copy on right as reference gallery tags. Those belong in the left input form.
 
 ## Gallery JSON Schema
 

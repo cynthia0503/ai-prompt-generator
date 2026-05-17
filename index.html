@@ -36,6 +36,17 @@
           </label>
 
           <label>
+            <span>出力表現形式</span>
+            <select id="outputFormat">
+              <option value="photo">写真</option>
+              <option value="illustration">イラスト</option>
+              <option value="3D visual">3D</option>
+              <option value="collage">コラージュ</option>
+              <option value="typography">タイポグラフィ</option>
+            </select>
+          </label>
+
+          <label>
             <span>主体</span>
             <input id="subject" type="text" placeholder="例: スキンケア美容液ボトル">
           </label>
@@ -108,7 +119,7 @@
           <h2 id="gallery-heading">リファレンスプリセット</h2>
           <span class="status-pill" id="galleryStatus">読み込み中</span>
         </div>
-        <p class="panel-help">参考画像はAIで解析されません。選択したプリセットの構図・色味・トンマナを下のプロンプトに反映します。タグは最大3個まで選択できます。</p>
+        <p class="panel-help">参考画像はAIで解析されません。右側のタグは参考図から借りたい要素を探すための分類です。タグは最大3個まで選択できます。</p>
         <div class="tag-toolbar">
           <span id="tagSummary">すべて表示</span>
           <button class="ghost-button small-button" id="clearTagsButton" type="button">タグ解除</button>
