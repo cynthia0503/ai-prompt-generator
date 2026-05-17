@@ -116,6 +116,35 @@
     }
   },
   {
+    "id": "minimal-brown-line-person-01",
+    "title": "ミニマル人物線画",
+    "image": "images/sample/sample-5.png",
+    "tags": ["人物", "手描き感", "ミニマル", "余白多め", "フェミニン"],
+    "preset": {
+      "composition": "simple character-focused portrait or bust-up composition with clean whitespace and a calm side-profile feeling",
+      "lighting": "flat illustration lighting with almost no shadow, relying on linework and simple color blocks",
+      "colorPalette": "warm brown linework, soft beige skin tone, muted orange accent, clean white background",
+      "mood": "minimal, calm, feminine, thoughtful, clean",
+      "texture": "thin brown hand-drawn line art, smooth flat coloring, sparse detail, clean digital illustration surface",
+      "style": "minimal Japanese lifestyle character illustration with warm brown linework and restrained flat coloring",
+      "negative": "photorealistic skin, heavy shading, thick black outline, complex background, overly detailed rendering, 3D look, watermark, stock watermark, text"
+    },
+    "presetJa": {
+      "composition": "清潔な余白を活かした、横顔やバストアップ中心のシンプルな人物構図",
+      "lighting": "影をほとんど使わず、線画とシンプルな色面で見せるフラットなイラスト光",
+      "colorPalette": "温かいブラウンの線、柔らかな肌色、くすんだオレンジの差し色、白背景",
+      "mood": "ミニマル、穏やか、フェミニン、思慮深い、清潔感",
+      "texture": "細いブラウンの手描き線、なめらかなフラット塗り、少ないディテール、清潔なデジタルイラスト面",
+      "style": "温かいブラウン線画と控えめなフラット塗りを活かした、日本向けミニマル人物ライフスタイルイラスト",
+      "negative": "写実的な肌、強い陰影、太い黒線、複雑な背景、描き込みすぎ、3D感、透かし、ストック透かし、文字"
+    },
+    "recommendedSettings": {
+      "aspectRatio": "4:5",
+      "referenceUse": "Use this image as a minimal warm-brown linework and flat coloring reference for simple character illustration.",
+      "variationAdvice": "Keep the warm brown line art, clean whitespace, and restrained flat color blocks consistent while changing the person, pose, or theme."
+    }
+  },
+  {
     "id": "airy-bubble-pop-photo-01",
     "title": "エアリーバブルPOP",
     "image": "images/sample/sample-1.png",
