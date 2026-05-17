@@ -64,6 +64,8 @@ Build only the following:
 8. Generate recommended generation settings.
 9. One-click copy for each output block.
 
+Reference selection supports one main preset and up to two secondary presets. Main preset controls the primary style direction. Secondary presets should only contribute supporting mood, lighting, color, and texture cues, not exact subject or composition.
+
 ## Out of Scope for MVP
 
 Do not implement:

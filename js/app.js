@@ -294,10 +294,12 @@ const FALLBACK_GALLERY = [
 const state = {
   gallery: FALLBACK_GALLERY,
   selectedPresetId: FALLBACK_GALLERY[0].id,
+  secondaryPresetIds: [],
   selectedTags: new Set()
 };
 
 const MAX_SELECTED_TAGS = 3;
+const MAX_SECONDARY_PRESETS = 2;
 
 const TAG_GROUPS = [
   {
@@ -437,6 +439,12 @@ function getSelectedPreset() {
   return state.gallery.find((item) => item.id === state.selectedPresetId) || state.gallery[0];
 }
 
+function getSecondaryPresets() {
+  return state.secondaryPresetIds
+    .map((id) => state.gallery.find((item) => item.id === id))
+    .filter(Boolean);
+}
+
 const STYLE_PRIORITY_COPY = {
   balanced: {
     en: "Apply the selected reference as an overall style direction, while keeping the user's subject and scene requirements dominant.",
@@ -472,6 +480,7 @@ function getStylePriorityCopy(value) {
 function buildPrompts() {
   const values = getFieldValues();
   const preset = getSelectedPreset();
+  const secondaryPresets = getSecondaryPresets();
   const p = preset.preset;
   const pJa = preset.presetJa || preset.preset;
   const stylePriority = getStylePriorityCopy(values.stylePriority);
@@ -483,6 +492,13 @@ function buildPrompts() {
   const moodEn = compactList([translateInputToEnglish(values.tone), p.mood]);
   const mustIncludeEn = sentence(translateInputToEnglish(values.mustInclude), "clear subject visibility and enough whitespace for design use");
   const usageNoteEn = sentence(translateInputToEnglish(values.notes), "ready to use in LP, advertising, web, or video asset production");
+  const secondaryEn = secondaryPresets.map((item) => (
+    `${item.title}: use only supporting mood, lighting, color, and texture cues (${item.preset.lighting}; ${item.preset.colorPalette}; ${item.preset.mood}; ${item.preset.texture}). Do not import its subject, exact composition, or unwanted materials.`
+  ));
+  const secondaryJa = secondaryPresets.map((item) => {
+    const itemJa = item.presetJa || item.preset;
+    return `${item.title}: 補助要素として、光・色味・雰囲気・質感だけを使う（${itemJa.lighting}、${itemJa.colorPalette}、${itemJa.mood}、${itemJa.texture}）。被写体、正確な構図、不要な素材感は取り込まない。`;
+  });
 
   const english = [
     `Purpose: Create a ${values.usage}.`,
@@ -493,6 +509,8 @@ function buildPrompts() {
     `Color palette: ${colorsEn}.`,
     `Mood and tone: ${moodEn}.`,
     `Style direction: ${p.style}.`,
+    `Main reference: ${preset.title}. Use this as the primary style reference.`,
+    secondaryEn.length ? `Secondary references: ${secondaryEn.join(" ")}` : "",
     `Style priority: ${stylePriority.en}`,
     `Texture and material feeling: ${p.texture}.`,
     `Must include: ${mustIncludeEn}.`,
@@ -509,6 +527,8 @@ function buildPrompts() {
     `色味: ${compactList([values.colors, pJa.colorPalette])}。`,
     `トンマナ: ${compactList([values.tone, pJa.mood])}。`,
     `スタイル方向性: ${pJa.style}。`,
+    `メイン参考: ${preset.title}。この参考を主スタイルとして使う。`,
+    secondaryJa.length ? `サブ参考: ${secondaryJa.join(" ")}` : "",
     `スタイル優先度: ${stylePriority.ja}`,
     `質感: ${pJa.texture}。`,
     `必ず入れたい要素: ${sentence(values.mustInclude, "主体が明確に見え、デザインで使いやすい余白がある")}。`,
@@ -516,19 +536,21 @@ function buildPrompts() {
     "商用デザインに使いやすく、主役が明確で、余白が整理されたビジュアルにする。"
   ].join("\n");
 
-  const negative = compactList([translateInputToEnglish(values.avoid), p.negative, stylePriority.negative]);
+  const secondaryNegative = secondaryPresets.map((item) => item.preset.negative).join(", ");
+  const negative = compactList([translateInputToEnglish(values.avoid), p.negative, secondaryNegative, stylePriority.negative]);
 
   const settings = [
     `Aspect ratio: ${values.ratio || preset.recommendedSettings.aspectRatio}`,
-    `Reference: ${preset.title}`,
+    `Main reference: ${preset.title}`,
+    secondaryPresets.length ? `Secondary references: ${secondaryPresets.map((item) => item.title).join(", ")}` : "",
     `Style priority: ${stylePriority.en}`,
     `Reference usage: ${preset.recommendedSettings.referenceUse}`,
     `Variation advice: ${preset.recommendedSettings.variationAdvice}`,
     "If the generation tool supports seed values, keep the same seed for visual consistency across a series."
-  ].join("\n");
+  ].filter(Boolean).join("\n");
 
-  els.englishOutput.value = english;
-  els.japaneseOutput.value = japanese;
+  els.englishOutput.value = english.split("\n").filter(Boolean).join("\n");
+  els.japaneseOutput.value = japanese.split("\n").filter(Boolean).join("\n");
   els.negativeOutput.value = negative;
   els.settingsOutput.value = settings;
 }
@@ -618,27 +640,56 @@ function renderGallery() {
   }
 
   visibleItems.forEach((item) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = `preset-card${item.id === state.selectedPresetId ? " is-selected" : ""}`;
-    button.innerHTML = `
+    const card = document.createElement("article");
+    card.className = `preset-card${item.id === state.selectedPresetId ? " is-selected" : ""}${state.secondaryPresetIds.includes(item.id) ? " is-secondary" : ""}`;
+    card.innerHTML = `
       <img src="${item.image}" alt="${item.title}">
       <strong>${item.title}</strong>
       <p>${item.preset.style}</p>
       <span class="tag-list">
         ${item.tags.map((tag) => `<span class="tag-chip">${tag}</span>`).join("")}
       </span>
+      <span class="preset-actions">
+        <button class="mini-action primary-action" type="button" data-action="main">${item.id === state.selectedPresetId ? "メイン中" : "メイン"}</button>
+        <button class="mini-action" type="button" data-action="secondary">${state.secondaryPresetIds.includes(item.id) ? "サブ解除" : "サブ"}</button>
+      </span>
     `;
-    button.addEventListener("click", () => {
-      state.selectedPresetId = item.id;
-      updateSelectedPresetLabel();
-      renderGallery();
-      buildPrompts();
+    card.querySelector('[data-action="main"]').addEventListener("click", () => {
+      setMainPreset(item.id);
     });
-    els.galleryGrid.append(button);
+    card.querySelector('[data-action="secondary"]').addEventListener("click", () => {
+      toggleSecondaryPreset(item.id);
+    });
+    els.galleryGrid.append(card);
   });
 
   updateTagSummary(visibleItems.length);
+}
+
+function setMainPreset(id) {
+  state.selectedPresetId = id;
+  state.secondaryPresetIds = state.secondaryPresetIds.filter((presetId) => presetId !== id);
+  updateSelectedPresetLabel();
+  renderGallery();
+  buildPrompts();
+}
+
+function toggleSecondaryPreset(id) {
+  if (id === state.selectedPresetId) {
+    showToast("メイン参考はサブにできません");
+    return;
+  }
+  if (state.secondaryPresetIds.includes(id)) {
+    state.secondaryPresetIds = state.secondaryPresetIds.filter((presetId) => presetId !== id);
+  } else if (state.secondaryPresetIds.length >= MAX_SECONDARY_PRESETS) {
+    showToast(`サブ参考は${MAX_SECONDARY_PRESETS}つまで選択できます`);
+    return;
+  } else {
+    state.secondaryPresetIds.push(id);
+  }
+  updateSelectedPresetLabel();
+  renderGallery();
+  buildPrompts();
 }
 
 function updateTagSummary(visibleCount = null) {
@@ -653,7 +704,10 @@ function updateTagSummary(visibleCount = null) {
 
 function updateSelectedPresetLabel() {
   const preset = getSelectedPreset();
-  els.selectedPresetLabel.textContent = preset ? preset.title : "プリセット未選択";
+  const secondaryPresets = getSecondaryPresets();
+  els.selectedPresetLabel.textContent = preset
+    ? `メイン: ${preset.title}${secondaryPresets.length ? ` / サブ: ${secondaryPresets.map((item) => item.title).join(", ")}` : ""}`
+    : "プリセット未選択";
 }
 
 function showToast(message) {
@@ -695,10 +749,12 @@ async function loadGallery() {
     }
     state.gallery = await response.json();
     state.selectedPresetId = state.gallery[0]?.id || "";
+    state.secondaryPresetIds = [];
     els.galleryStatus.textContent = "JSON読込済";
   } catch {
     state.gallery = FALLBACK_GALLERY;
     state.selectedPresetId = FALLBACK_GALLERY[0].id;
+    state.secondaryPresetIds = [];
     els.galleryStatus.textContent = "内蔵データ";
   }
 }
